@@ -19,6 +19,7 @@
 		8929441C18A5E331006E67B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8929440418A5E331006E67B6 /* UIKit.framework */; };
 		8929442418A5E331006E67B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8929442218A5E331006E67B6 /* InfoPlist.strings */; };
 		8929442618A5E331006E67B6 /* BeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929442518A5E331006E67B6 /* BeaconTests.m */; };
+		8929443118A5E6B0006E67B6 /* BMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929443018A5E6B0006E67B6 /* BMRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		8929442118A5E331006E67B6 /* BeaconTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BeaconTests-Info.plist"; sourceTree = "<group>"; };
 		8929442318A5E331006E67B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8929442518A5E331006E67B6 /* BeaconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeaconTests.m; sourceTree = "<group>"; };
+		8929442F18A5E6B0006E67B6 /* BMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMRootViewController.h; sourceTree = "<group>"; };
+		8929443018A5E6B0006E67B6 /* BMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 			children = (
 				8929440F18A5E331006E67B6 /* AppDelegate.h */,
 				8929441018A5E331006E67B6 /* AppDelegate.m */,
+				8929442F18A5E6B0006E67B6 /* BMRootViewController.h */,
+				8929443018A5E6B0006E67B6 /* BMRootViewController.m */,
 				8929441218A5E331006E67B6 /* Images.xcassets */,
 				8929440718A5E331006E67B6 /* Supporting Files */,
 			);
@@ -241,6 +246,7 @@
 			files = (
 				8929441118A5E331006E67B6 /* AppDelegate.m in Sources */,
 				8929440D18A5E331006E67B6 /* main.m in Sources */,
+				8929443118A5E6B0006E67B6 /* BMRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
