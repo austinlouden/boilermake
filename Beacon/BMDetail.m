@@ -25,23 +25,24 @@
     if (self = [super init]) {
         
         // background and border
-        self.backgroundColor = [UIColor colorWithWhite:0.95f alpha:0.8f];
-        self.layer.borderColor = [UIColor colorWithWhite:0.5f alpha:1.0f].CGColor;
-        self.layer.borderWidth = 1.0f;
+        self.backgroundColor = [UIColor whiteColor];
+        self.layer.cornerRadius = 10;
+        self.layer.masksToBounds = YES;
         
         // add the image for the person in the detail view
         _image = image;
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-        imageView.layer.borderColor = [UIColor colorWithWhite:0.5f alpha:1.0f].CGColor;
-        imageView.layer.borderWidth = 1.0f;
-        imageView.frame = CGRectMake(6.0f, 6.0f, 80.0f, 80.0f);
+        imageView.layer.cornerRadius = 10;
+        imageView.layer.masksToBounds = YES;
+        imageView.frame = CGRectMake(0.0f,0.0f, 80.0f, 80.0f);
         [self addSubview:imageView];
         
         // labels
         UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(92.0f, 5.0f, 200.0f, 40.0f)];
         nameLabel.backgroundColor = [UIColor clearColor];
-        nameLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20.0f];
-        nameLabel.text = [info objectForKey:@"name"];
+        nameLabel.font = [UIFont fontWithName:@"Avenir-Black" size:18.0f];
+        nameLabel.text = [[info objectForKey:@"name"] uppercaseString];
+        nameLabel.textColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
         [self addSubview:nameLabel];
         
          

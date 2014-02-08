@@ -53,16 +53,16 @@
     CGRect frame;
     switch (quadrant) {
         case 1:
-            frame = CGRectMake(self.frame.origin.x-310.0f, self.frame.origin.y+5, 300.0f, 200.0f);
+            frame = CGRectMake(self.frame.origin.x-310.0f, self.frame.origin.y+5, 300.0f, 80.0f);
             break;
         case 2:
-            frame = CGRectMake(self.frame.origin.x+42.0f, self.frame.origin.y+5, 300.0f, 200.0f);
+            frame = CGRectMake(self.frame.origin.x+42.0f, self.frame.origin.y+5, 300.0f, 80.0f);
             break;
         case 3:
-            frame = CGRectMake(self.frame.origin.x+42.0f, self.frame.origin.y-200, 300.0f, 200.0f);
+            frame = CGRectMake(self.frame.origin.x+42.0f, self.frame.origin.y-80, 300.0f, 80.0f);
             break;
         case 4:
-            frame = CGRectMake(self.frame.origin.x-310.0f, self.frame.origin.y-200, 300.0f, 200.0f);
+            frame = CGRectMake(self.frame.origin.x-310.0f, self.frame.origin.y-80, 300.0f, 80.0f);
             break;
             
         default:
