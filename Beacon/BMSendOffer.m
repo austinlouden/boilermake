@@ -33,6 +33,10 @@
         [cancelButton addTarget:self action:@selector(cancelPressed) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:cancelButton];
         
+        // offer image
+        UIImageView *offer1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"offer1.jpg"]];
+        offer1.frame = CGRectMake(10.0f, 10.0f, self.frame.size.width-20.0f, 550.0f);
+        [self addSubview:offer1];
         
         
     }
@@ -46,6 +50,7 @@
 
 - (void)sendPressed
 {
+    NSLog(@"send something to the server");
     
 }
 

@@ -36,8 +36,6 @@
     
     BMBackground *background = [[BMBackground alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.height, self.view.frame.size.width)];
     [self.view addSubview:background];
-
-    
     
     // beacon code to get devices in range goes here
     
@@ -45,7 +43,7 @@
     
     NSDictionary *info = @{@"name": @"Austin Louden", @"email": @"austinlouden@gmail.com"};
     
-    BMPerson *person1 = [[BMPerson alloc] initWithFrame:CGRectMake(100.0f, 100.0f, PERSON_SIZE, PERSON_SIZE)];
+    BMPerson *person1 = [[BMPerson alloc] initWithFrame:CGRectMake(100.0f, 150.0f, PERSON_SIZE, PERSON_SIZE)];
     UIImage *image1 = [UIImage imageNamed:@"AUSTIN_small.png"];
     person1.image = image1;
     person1.info = info;
@@ -63,21 +61,19 @@
     person3.info = info;
     [self.view addSubview:person3];
     
-    BMPerson *person4 = [[BMPerson alloc] initWithFrame:CGRectMake(700.0f, 100.0f, PERSON_SIZE, PERSON_SIZE)];
+    BMPerson *person4 = [[BMPerson alloc] initWithFrame:CGRectMake(700.0f, 150.0f, PERSON_SIZE, PERSON_SIZE)];
     UIImage *image4 = [UIImage imageNamed:@"AUSTIN_small.png"];
     person4.image = image4;
     person4.info = info;
     [self.view addSubview:person4];
     
     BMBeacon *beacon1 = [[BMBeacon alloc] initWithTitle:@"BEACON 1"];
-    beacon1.frame = CGRectMake(100.0f, 115.0f, 80.0f, 50.0f);
+    beacon1.frame = CGRectMake(100.0f, 165.0f, 80.0f, 50.0f);
     [self.view addSubview:beacon1];
     
     BMBeacon *beacon2 = [[BMBeacon alloc] initWithTitle:@"BEACON 2"];
-    beacon2.frame = CGRectMake(400.0f, 115.0f, 80.0f, 50.0f);
+    beacon2.frame = CGRectMake(400.0f, 165.0f, 80.0f, 50.0f);
     [self.view addSubview:beacon2];
-    
-
     
 }
 
