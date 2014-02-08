@@ -8,6 +8,7 @@
 
 #import "BMDetail.h"
 #import "BMPerson.h"
+#import "SVPulsingAnnotationView.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation BMPerson
@@ -18,12 +19,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor colorWithRed:(2.0f/255.0f) green:(173.0f/255.0f) blue:(234.0f/255.0f) alpha:1.0f];
-        
-        self.layer.cornerRadius = 15;
-        self.layer.masksToBounds = YES;
-        
         // add the image
+        SVPulsingAnnotationView *pulseView = [[SVPulsingAnnotationView alloc] initWithNothing];
+        pulseView.frame = CGRectMake(0.0f, 0.0f, 25.0f, 25.0f);
+        [self addSubview:pulseView];
         
         // gesture recognizer
         UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped)];
@@ -33,16 +32,6 @@
     }
     return self;
 }
-
-- (id)initWithImage:(UIImage *)image
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
 
 - (void)imageTapped
 {

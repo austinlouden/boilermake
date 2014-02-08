@@ -25,14 +25,16 @@
     if (self = [super init]) {
         
         // background and border
-        self.backgroundColor = [UIColor whiteColor];
-        self.layer.borderColor = [UIColor grayColor].CGColor;
+        self.backgroundColor = [UIColor colorWithWhite:0.95f alpha:0.8f];
+        self.layer.borderColor = [UIColor colorWithWhite:0.5f alpha:1.0f].CGColor;
         self.layer.borderWidth = 1.0f;
         
         // add the image for the person in the detail view
         _image = image;
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-        imageView.frame = CGRectMake(5.0f, 5.0f, 80.0f, 80.0f);
+        imageView.layer.borderColor = [UIColor colorWithWhite:0.5f alpha:1.0f].CGColor;
+        imageView.layer.borderWidth = 1.0f;
+        imageView.frame = CGRectMake(6.0f, 6.0f, 80.0f, 80.0f);
         [self addSubview:imageView];
          
     }
