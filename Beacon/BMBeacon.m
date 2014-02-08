@@ -29,7 +29,7 @@
         SVPulsingAnnotationView *pulseView = [[SVPulsingAnnotationView alloc] initWithNothing];
         pulseView.frame = CGRectMake(26.0f, 0.0f, 15.0f, 15.0f);
         [pulseView setAnnotationColor:[UIColor colorWithRed:(237/255.0f) green:(129/255.0f) blue:(43/255.0f) alpha:1.0f]];
-        pulseView.pulseScaleFactor = 30.0f;
+        pulseView.pulseScaleFactor = 20.0f;
         [self addSubview:pulseView];
         
         // add the label

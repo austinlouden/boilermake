@@ -43,19 +43,19 @@
     
     NSDictionary *info = @{@"name": @"Austin Louden", @"email": @"austinlouden@gmail.com"};
     
-    BMPerson *person1 = [[BMPerson alloc] initWithFrame:CGRectMake(100.0f, 150.0f, PERSON_SIZE, PERSON_SIZE)];
+    BMPerson *person1 = [[BMPerson alloc] initWithFrame:CGRectMake(260.0f, 120.0f, PERSON_SIZE, PERSON_SIZE)];
     UIImage *image1 = [UIImage imageNamed:@"AUSTIN_small.png"];
     person1.image = image1;
     person1.info = info;
     [self.view addSubview:person1];
     
-    BMPerson *person2 = [[BMPerson alloc] initWithFrame:CGRectMake(100.0f, 500.0f, PERSON_SIZE, PERSON_SIZE)];
+    BMPerson *person2 = [[BMPerson alloc] initWithFrame:CGRectMake(100.0f, 420.0f, PERSON_SIZE, PERSON_SIZE)];
     UIImage *image2 = [UIImage imageNamed:@"AUSTIN_small.png"];
     person2.image = image2;
     person2.info = info;
     [self.view addSubview:person2];
     
-    BMPerson *person3 = [[BMPerson alloc] initWithFrame:CGRectMake(700.0f, 500.0f, PERSON_SIZE, PERSON_SIZE)];
+    BMPerson *person3 = [[BMPerson alloc] initWithFrame:CGRectMake(700.0f, 636.0f, PERSON_SIZE, PERSON_SIZE)];
     UIImage *image3 = [UIImage imageNamed:@"AUSTIN_small.png"];
     person3.image = image3;
     person3.info = info;
@@ -68,12 +68,16 @@
     [self.view addSubview:person4];
     
     BMBeacon *beacon1 = [[BMBeacon alloc] initWithTitle:@"BEACON 1"];
-    beacon1.frame = CGRectMake(100.0f, 165.0f, 80.0f, 50.0f);
+    beacon1.frame = CGRectMake(100.0f, 105.0f, 80.0f, 50.0f);
     [self.view addSubview:beacon1];
     
     BMBeacon *beacon2 = [[BMBeacon alloc] initWithTitle:@"BEACON 2"];
-    beacon2.frame = CGRectMake(400.0f, 165.0f, 80.0f, 50.0f);
+    beacon2.frame = CGRectMake(400.0f, 295.0f, 80.0f, 50.0f);
     [self.view addSubview:beacon2];
+    
+    BMBeacon *beacon3 = [[BMBeacon alloc] initWithTitle:@"BEACON 3"];
+    beacon3.frame = CGRectMake(560.0f, 640.0f, 80.0f, 50.0f);
+    [self.view addSubview:beacon3];
     
 }
 
