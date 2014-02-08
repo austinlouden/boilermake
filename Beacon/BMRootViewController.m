@@ -69,8 +69,13 @@
     person4.info = info;
     [self.view addSubview:person4];
     
-    BMBeacon *beacon1 = [[BMBeacon alloc] initWithFrame:CGRectMake(300.0f, 300.0f, 80.0f, 50.0f)];
+    BMBeacon *beacon1 = [[BMBeacon alloc] initWithTitle:@"BEACON 1"];
+    beacon1.frame = CGRectMake(100.0f, 115.0f, 80.0f, 50.0f);
     [self.view addSubview:beacon1];
+    
+    BMBeacon *beacon2 = [[BMBeacon alloc] initWithTitle:@"BEACON 2"];
+    beacon2.frame = CGRectMake(400.0f, 115.0f, 80.0f, 50.0f);
+    [self.view addSubview:beacon2];
     
 
     

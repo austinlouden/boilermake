@@ -27,6 +27,7 @@
 		8929444018A60E2A006E67B6 /* SVPulsingAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929443F18A60E2A006E67B6 /* SVPulsingAnnotationView.m */; };
 		8929444318A650C4006E67B6 /* BMBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929444218A650C4006E67B6 /* BMBeacon.m */; };
 		8929444618A654C0006E67B6 /* BMBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929444518A654C0006E67B6 /* BMBackground.m */; };
+		8929444918A66B77006E67B6 /* BMSendOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929444818A66B77006E67B6 /* BMSendOffer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		8929444218A650C4006E67B6 /* BMBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMBeacon.m; sourceTree = "<group>"; };
 		8929444418A654C0006E67B6 /* BMBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMBackground.h; sourceTree = "<group>"; };
 		8929444518A654C0006E67B6 /* BMBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMBackground.m; sourceTree = "<group>"; };
+		8929444718A66B77006E67B6 /* BMSendOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMSendOffer.h; sourceTree = "<group>"; };
+		8929444818A66B77006E67B6 /* BMSendOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMSendOffer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 				8929444218A650C4006E67B6 /* BMBeacon.m */,
 				8929444418A654C0006E67B6 /* BMBackground.h */,
 				8929444518A654C0006E67B6 /* BMBackground.m */,
+				8929444718A66B77006E67B6 /* BMSendOffer.h */,
+				8929444818A66B77006E67B6 /* BMSendOffer.m */,
 				8929443518A5EE22006E67B6 /* AUSTIN_small.png */,
 				8929443C18A60E2A006E67B6 /* External */,
 				8929441218A5E331006E67B6 /* Images.xcassets */,
@@ -299,6 +304,7 @@
 				8929444018A60E2A006E67B6 /* SVPulsingAnnotationView.m in Sources */,
 				8929440D18A5E331006E67B6 /* main.m in Sources */,
 				8929443918A5F8BF006E67B6 /* BMDetail.m in Sources */,
+				8929444918A66B77006E67B6 /* BMSendOffer.m in Sources */,
 				8929443118A5E6B0006E67B6 /* BMRootViewController.m in Sources */,
 				8929443418A5EC6A006E67B6 /* BMPerson.m in Sources */,
 			);

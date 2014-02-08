@@ -7,6 +7,7 @@
 //
 
 #import "BMDetail.h"
+#import "BMSendOffer.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation BMDetail
@@ -38,7 +39,7 @@
         [self addSubview:imageView];
         
         // labels
-        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(92.0f, 5.0f, 200.0f, 40.0f)];
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(92.0f, 2.0f, 200.0f, 40.0f)];
         nameLabel.backgroundColor = [UIColor clearColor];
         nameLabel.font = [UIFont fontWithName:@"Avenir-Black" size:18.0f];
         nameLabel.text = [[info objectForKey:@"name"] uppercaseString];
@@ -46,27 +47,25 @@
         [self addSubview:nameLabel];
         
         UIButton *emailButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        emailButton.frame = CGRectMake(87.0f, 50.0f, 100.0f, 30.0f);
+        emailButton.frame = CGRectMake(190.0f, 52.0f, 100.0f, 30.0f);
         emailButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Black" size:14.0f];
         [emailButton setTitle:@"SEND EMAIL" forState:UIControlStateNormal];
         [emailButton addTarget:self action:@selector(emailPressed) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:emailButton];
         
         UIButton *offerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        offerButton.frame = CGRectMake(190.0f, 50.0f, 100.0f, 30.0f);
+        offerButton.frame = CGRectMake(87.0f, 52.0f, 100.0f, 30.0f);
         [offerButton setTitle:@"SEND OFFER" forState:UIControlStateNormal];
         offerButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Black" size:14.0f];
         [offerButton addTarget:self action:@selector(offerPressed) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:offerButton];
         
-        UILabel *sinceLabel = [[UILabel alloc] initWithFrame:CGRectMake(92.0f, 31.0f, 200.0f, 30.0f)];
+        UILabel *sinceLabel = [[UILabel alloc] initWithFrame:CGRectMake(92.0f, 32.0f, 200.0f, 30.0f)];
         sinceLabel.backgroundColor = [UIColor clearColor];
         sinceLabel.font = [UIFont fontWithName:@"Avenir-Black" size:13.0f];
         sinceLabel.text = @"MEMBER SINCE: 02/08/14";
         sinceLabel.textColor = [UIColor colorWithWhite:0.4f alpha:1.0f];
         [self addSubview:sinceLabel];
-        
-        
          
     }
     
@@ -80,7 +79,8 @@
 
 - (void)offerPressed
 {
-    NSLog(@"offer pressed");
+    BMSendOffer *sendOffer = [[BMSendOffer alloc] initWithFrame:CGRectMake(600.0f, 50.0f, 400.0f, [self superview].frame.size.width-100.0f)];
+    [[self superview] addSubview:sendOffer];
 }
 
 /*

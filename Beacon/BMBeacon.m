@@ -10,11 +10,20 @@
 #import "SVPulsingAnnotationView.h"
 
 @implementation BMBeacon
+@synthesize title = _title;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
+    }
+    return self;
+}
+
+- (id)initWithTitle:(NSString*)title
+{
+    if (self = [super init]) {
         
         // add the image
         SVPulsingAnnotationView *pulseView = [[SVPulsingAnnotationView alloc] initWithNothing];
@@ -24,10 +33,9 @@
         [self addSubview:pulseView];
         
         // add the label
-        
         UILabel *beaconLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 12.0f, 80.0f, 30.0f)];
         beaconLabel.font = [UIFont fontWithName:@"Avenir-Black" size:14.0f];
-        beaconLabel.text = @"BEACON 1";
+        beaconLabel.text = title;
         beaconLabel.textColor = [UIColor colorWithWhite:0.3f alpha:1.0f];
         [self addSubview:beaconLabel];
         
@@ -37,7 +45,9 @@
         [self addGestureRecognizer:recognizer];
         
     }
+    
     return self;
+    
 }
 
 - (void)imageTapped

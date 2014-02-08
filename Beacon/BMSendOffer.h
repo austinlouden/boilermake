@@ -1,5 +1,5 @@
 //
-//  BMBeacon.h
+//  BMSendOffer.h
 //  Beacon
 //
 //  Created by Austin Louden on 2/8/14.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BMBeacon : UIView
-@property (nonatomic, strong) NSString *title;
-- (id)initWithTitle:(NSString*)title;
+@interface BMSendOffer : UIView
+
 @end
