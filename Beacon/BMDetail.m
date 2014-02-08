@@ -36,6 +36,14 @@
         imageView.layer.borderWidth = 1.0f;
         imageView.frame = CGRectMake(6.0f, 6.0f, 80.0f, 80.0f);
         [self addSubview:imageView];
+        
+        // labels
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(92.0f, 5.0f, 200.0f, 40.0f)];
+        nameLabel.backgroundColor = [UIColor clearColor];
+        nameLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20.0f];
+        nameLabel.text = [info objectForKey:@"name"];
+        [self addSubview:nameLabel];
+        
          
     }
     
