@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BMDetail : UIView
-
+@property (nonatomic, strong) UIImage *image;
+- (id)initWithImage:(UIImage *)image info:(NSDictionary *)info;
 @end

@@ -10,5 +10,5 @@
 
 @interface BMPerson : UIView
 @property (nonatomic, strong) UIImage *image;
-- (id)initWithImage:(UIImage *)image;
+@property (nonatomic, strong) NSDictionary *info;
 @end

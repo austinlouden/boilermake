@@ -10,16 +10,33 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation BMDetail
+@synthesize image = _image;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        self.backgroundColor = [UIColor whiteColor];
-        self.layer.borderColor = [UIColor darkGrayColor].CGColor;
-        self.layer.borderWidth = 1.0f;
     }
+    return self;
+}
+
+- (id)initWithImage:(UIImage *)image info:(NSDictionary *)info
+{
+    if (self = [super init]) {
+        
+        // background and border
+        self.backgroundColor = [UIColor whiteColor];
+        self.layer.borderColor = [UIColor grayColor].CGColor;
+        self.layer.borderWidth = 1.0f;
+        
+        // add the image for the person in the detail view
+        _image = image;
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.frame = CGRectMake(5.0f, 5.0f, 80.0f, 80.0f);
+        [self addSubview:imageView];
+         
+    }
+    
     return self;
 }
 

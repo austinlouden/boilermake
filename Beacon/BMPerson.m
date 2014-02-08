@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation BMPerson
-@synthesize image = _image;
+@synthesize image = _image, info = _info;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -24,9 +24,6 @@
         self.layer.masksToBounds = YES;
         
         // add the image
-        //_image = image;
-        //UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-        //[self addSubview:imageView];
         
         // gesture recognizer
         UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped)];
@@ -49,14 +46,14 @@
 
 - (void)imageTapped
 {
-    
+    // remove any other popups from the superview
     for (UIView* view in [[self superview] subviews]) {
         if ([view isKindOfClass:[BMDetail class]])
             [view removeFromSuperview];
     }
     
+    // logic to set the frame of the detail view
     int quadrant = 0;
-    
     if (self.frame.origin.y < [self superview].frame.size.width/2) {
         if (self.frame.origin.x < [self superview].frame.size.height/2) quadrant = 2;
         else quadrant = 1;
@@ -64,7 +61,6 @@
         if (self.frame.origin.x < [self superview].frame.size.height/2) quadrant = 3;
         else quadrant = 4;
     }
-    
     CGRect frame;
     switch (quadrant) {
         case 1:
@@ -84,7 +80,8 @@
             break;
     }
     
-    BMDetail *detailView = [[BMDetail alloc] initWithFrame:frame];
+    BMDetail *detailView = [[BMDetail alloc] initWithImage:_image info:_info];
+    detailView.frame = frame;
     [[self superview] addSubview:detailView];
 }
 
