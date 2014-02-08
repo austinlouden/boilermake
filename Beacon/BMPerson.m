@@ -49,6 +49,12 @@
 
 - (void)imageTapped
 {
+    
+    for (UIView* view in [[self superview] subviews]) {
+        if ([view isKindOfClass:[BMDetail class]])
+            [view removeFromSuperview];
+    }
+    
     int quadrant = 0;
     
     if (self.frame.origin.y < [self superview].frame.size.width/2) {
@@ -59,11 +65,27 @@
         else quadrant = 4;
     }
     
-    NSLog(@"quad = %d", quadrant);
+    CGRect frame;
+    switch (quadrant) {
+        case 1:
+            frame = CGRectMake(self.frame.origin.x-310.0f, self.frame.origin.y+5, 300.0f, 200.0f);
+            break;
+        case 2:
+            frame = CGRectMake(self.frame.origin.x+42.0f, self.frame.origin.y+5, 300.0f, 200.0f);
+            break;
+        case 3:
+            frame = CGRectMake(self.frame.origin.x+42.0f, self.frame.origin.y-200, 300.0f, 200.0f);
+            break;
+        case 4:
+            frame = CGRectMake(self.frame.origin.x-310.0f, self.frame.origin.y-200, 300.0f, 200.0f);
+            break;
+            
+        default:
+            break;
+    }
     
-    // pull up the image for the user
-    //BMDetail *detailView = [[BMDetail alloc] initWithFrame:CGRectMake(100.0f, 100.0f, [self superview].frame.size.height-200.0f, 300.0f)];
-    //[[self superview] addSubview:detailView];
+    BMDetail *detailView = [[BMDetail alloc] initWithFrame:frame];
+    [[self superview] addSubview:detailView];
 }
 
 

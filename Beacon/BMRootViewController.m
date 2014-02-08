@@ -28,8 +28,6 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithRed:0.99f green:0.99f blue:0.99f alpha:1.0f];
-    
     // beacon code to get devices in range goes here
     
     // for each device in range, create a BMPerson and add it to the subview

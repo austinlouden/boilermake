@@ -7,6 +7,7 @@
 //
 
 #import "BMDetail.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation BMDetail
 
@@ -15,7 +16,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
+        self.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        self.layer.borderWidth = 1.0f;
     }
     return self;
 }

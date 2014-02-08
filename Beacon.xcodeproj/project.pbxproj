@@ -23,6 +23,7 @@
 		8929443418A5EC6A006E67B6 /* BMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929443318A5EC6A006E67B6 /* BMPerson.m */; };
 		8929443618A5EE22006E67B6 /* AUSTIN_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8929443518A5EE22006E67B6 /* AUSTIN_small.png */; };
 		8929443918A5F8BF006E67B6 /* BMDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929443818A5F8BF006E67B6 /* BMDetail.m */; };
+		8929443B18A606F2006E67B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8929443A18A606F2006E67B6 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		8929443518A5EE22006E67B6 /* AUSTIN_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUSTIN_small.png; sourceTree = "<group>"; };
 		8929443718A5F8BF006E67B6 /* BMDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDetail.h; sourceTree = "<group>"; };
 		8929443818A5F8BF006E67B6 /* BMDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDetail.m; sourceTree = "<group>"; };
+		8929443A18A606F2006E67B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8929443B18A606F2006E67B6 /* QuartzCore.framework in Frameworks */,
 				8929440318A5E331006E67B6 /* CoreGraphics.framework in Frameworks */,
 				8929440518A5E331006E67B6 /* UIKit.framework in Frameworks */,
 				8929440118A5E331006E67B6 /* Foundation.framework in Frameworks */,
@@ -107,6 +110,7 @@
 		892943FF18A5E331006E67B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8929443A18A606F2006E67B6 /* QuartzCore.framework */,
 				8929440018A5E331006E67B6 /* Foundation.framework */,
 				8929440218A5E331006E67B6 /* CoreGraphics.framework */,
 				8929440418A5E331006E67B6 /* UIKit.framework */,
