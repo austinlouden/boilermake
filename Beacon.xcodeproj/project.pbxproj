@@ -20,6 +20,9 @@
 		8929442418A5E331006E67B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8929442218A5E331006E67B6 /* InfoPlist.strings */; };
 		8929442618A5E331006E67B6 /* BeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929442518A5E331006E67B6 /* BeaconTests.m */; };
 		8929443118A5E6B0006E67B6 /* BMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929443018A5E6B0006E67B6 /* BMRootViewController.m */; };
+		8929443418A5EC6A006E67B6 /* BMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929443318A5EC6A006E67B6 /* BMPerson.m */; };
+		8929443618A5EE22006E67B6 /* AUSTIN_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8929443518A5EE22006E67B6 /* AUSTIN_small.png */; };
+		8929443918A5F8BF006E67B6 /* BMDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929443818A5F8BF006E67B6 /* BMDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,11 @@
 		8929442518A5E331006E67B6 /* BeaconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeaconTests.m; sourceTree = "<group>"; };
 		8929442F18A5E6B0006E67B6 /* BMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMRootViewController.h; sourceTree = "<group>"; };
 		8929443018A5E6B0006E67B6 /* BMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMRootViewController.m; sourceTree = "<group>"; };
+		8929443218A5EC6A006E67B6 /* BMPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPerson.h; sourceTree = "<group>"; };
+		8929443318A5EC6A006E67B6 /* BMPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMPerson.m; sourceTree = "<group>"; };
+		8929443518A5EE22006E67B6 /* AUSTIN_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUSTIN_small.png; sourceTree = "<group>"; };
+		8929443718A5F8BF006E67B6 /* BMDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDetail.h; sourceTree = "<group>"; };
+		8929443818A5F8BF006E67B6 /* BMDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,11 @@
 				8929441018A5E331006E67B6 /* AppDelegate.m */,
 				8929442F18A5E6B0006E67B6 /* BMRootViewController.h */,
 				8929443018A5E6B0006E67B6 /* BMRootViewController.m */,
+				8929443718A5F8BF006E67B6 /* BMDetail.h */,
+				8929443818A5F8BF006E67B6 /* BMDetail.m */,
+				8929443218A5EC6A006E67B6 /* BMPerson.h */,
+				8929443318A5EC6A006E67B6 /* BMPerson.m */,
+				8929443518A5EE22006E67B6 /* AUSTIN_small.png */,
 				8929441218A5E331006E67B6 /* Images.xcassets */,
 				8929440718A5E331006E67B6 /* Supporting Files */,
 			);
@@ -224,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8929443618A5EE22006E67B6 /* AUSTIN_small.png in Resources */,
 				8929440B18A5E331006E67B6 /* InfoPlist.strings in Resources */,
 				8929441318A5E331006E67B6 /* Images.xcassets in Resources */,
 			);
@@ -246,7 +260,9 @@
 			files = (
 				8929441118A5E331006E67B6 /* AppDelegate.m in Sources */,
 				8929440D18A5E331006E67B6 /* main.m in Sources */,
+				8929443918A5F8BF006E67B6 /* BMDetail.m in Sources */,
 				8929443118A5E6B0006E67B6 /* BMRootViewController.m in Sources */,
+				8929443418A5EC6A006E67B6 /* BMPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

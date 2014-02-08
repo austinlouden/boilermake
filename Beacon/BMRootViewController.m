@@ -7,6 +7,7 @@
 //
 
 #import "BMRootViewController.h"
+#import "BMPerson.h"
 
 @interface BMRootViewController ()
 
@@ -26,7 +27,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor colorWithRed:0.99f green:0.99f blue:0.99f alpha:1.0f];
+    
+    // beacon code to get devices in range goes here
+    
+    // for each device in range, create a BMPerson and add it to the subview
+    BMPerson *person1 = [[BMPerson alloc] initWithFrame:CGRectMake(100.0f, 100.0f, 30.f, 30.0f)];
+    UIImage *image1 = [UIImage imageNamed:@"AUSTIN_small.png"];
+    person1.image = image1;
+    [self.view addSubview:person1];
+    
+    BMPerson *person2 = [[BMPerson alloc] initWithFrame:CGRectMake(100.0f, 500.0f, 30.f, 30.0f)];
+    UIImage *image2 = [UIImage imageNamed:@"AUSTIN_small.png"];
+    person2.image = image2;
+    [self.view addSubview:person2];
+    
+    BMPerson *person3 = [[BMPerson alloc] initWithFrame:CGRectMake(700.0f, 500.0f, 30.f, 30.0f)];
+    UIImage *image3 = [UIImage imageNamed:@"AUSTIN_small.png"];
+    person3.image = image3;
+    [self.view addSubview:person3];
+    
+    BMPerson *person4 = [[BMPerson alloc] initWithFrame:CGRectMake(700.0f, 100.0f, 30.f, 30.0f)];
+    UIImage *image4 = [UIImage imageNamed:@"AUSTIN_small.png"];
+    person4.image = image4;
+    [self.view addSubview:person4];
+    
 }
 
 - (void)didReceiveMemoryWarning
