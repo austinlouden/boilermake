@@ -7,6 +7,8 @@
 //
 
 #import "BMBeacon.h"
+#import "BMProgrammer.h"
+#import "BMDetail.h"
 #import "SVPulsingAnnotationView.h"
 
 @implementation BMBeacon
@@ -24,6 +26,8 @@
 - (id)initWithTitle:(NSString*)title
 {
     if (self = [super init]) {
+        
+        _title = title;
         
         // add the image
         SVPulsingAnnotationView *pulseView = [[SVPulsingAnnotationView alloc] initWithNothing];
@@ -52,12 +56,16 @@
 
 - (void)imageTapped
 {
-    /* remove any other popups from the superview
+    NSLog(@"here");
+    // remove any other popups from the superview
     for (UIView* view in [[self superview] subviews]) {
         if ([view isKindOfClass:[BMDetail class]])
             [view removeFromSuperview];
     }
-     */
+    
+    BMProgrammer *detailView = [[BMProgrammer alloc] initWithTitle:_title];
+    detailView.frame = CGRectMake(600.0f, 50.0f, 400.0f, [self superview].frame.size.width-100.0f);
+    [[self superview] addSubview:detailView];
     
 }
 

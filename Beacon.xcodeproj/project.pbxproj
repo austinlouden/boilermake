@@ -40,6 +40,7 @@
 		8929446818A69CAB006E67B6 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929445F18A69CAB006E67B6 /* AFURLSessionManager.m */; };
 		8929446A18A69CC4006E67B6 /* offer2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8929446918A69CC4006E67B6 /* offer2.jpg */; };
 		8929446D18A69D90006E67B6 /* BMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929446C18A69D90006E67B6 /* BMHTTPClient.m */; };
+		8929447018A6DC91006E67B6 /* BMProgrammer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929446F18A6DC91006E67B6 /* BMProgrammer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		8929446918A69CC4006E67B6 /* offer2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = offer2.jpg; sourceTree = "<group>"; };
 		8929446B18A69D90006E67B6 /* BMHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMHTTPClient.h; sourceTree = "<group>"; };
 		8929446C18A69D90006E67B6 /* BMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMHTTPClient.m; sourceTree = "<group>"; };
+		8929446E18A6DC91006E67B6 /* BMProgrammer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMProgrammer.h; sourceTree = "<group>"; };
+		8929446F18A6DC91006E67B6 /* BMProgrammer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMProgrammer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				8929443318A5EC6A006E67B6 /* BMPerson.m */,
 				8929444118A650C4006E67B6 /* BMBeacon.h */,
 				8929444218A650C4006E67B6 /* BMBeacon.m */,
+				8929446E18A6DC91006E67B6 /* BMProgrammer.h */,
+				8929446F18A6DC91006E67B6 /* BMProgrammer.m */,
 				8929444418A654C0006E67B6 /* BMBackground.h */,
 				8929444518A654C0006E67B6 /* BMBackground.m */,
 				8929444718A66B77006E67B6 /* BMSendOffer.h */,
@@ -382,6 +387,7 @@
 				8929440D18A5E331006E67B6 /* main.m in Sources */,
 				8929446718A69CAB006E67B6 /* AFURLResponseSerialization.m in Sources */,
 				8929443918A5F8BF006E67B6 /* BMDetail.m in Sources */,
+				8929447018A6DC91006E67B6 /* BMProgrammer.m in Sources */,
 				8929444918A66B77006E67B6 /* BMSendOffer.m in Sources */,
 				8929443118A5E6B0006E67B6 /* BMRootViewController.m in Sources */,
 				8929443418A5EC6A006E67B6 /* BMPerson.m in Sources */,

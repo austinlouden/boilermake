@@ -40,13 +40,6 @@
     BMBackground *background = [[BMBackground alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.height, self.view.frame.size.width)];
     [self.view addSubview:background];
     
-    // TODO:
-    // on startup, query the server. for each user (response.length), create a BMPerson object, set the UUID and location.
-    // every N seconds, query the server, and for each live BMPerson, check if person.location is different than what you currently have.
-    // if isn't, do nothing. if it is, update the info we have, and perform an animation.
-    
-    // for each device in range, create a BMPerson and add it to the subview
-    
     NSDictionary *info = @{@"name": @"Austin Louden", @"email": @"austinlouden@gmail.com"};
     
     

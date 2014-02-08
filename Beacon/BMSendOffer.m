@@ -8,6 +8,14 @@
 
 #import "BMSendOffer.h"
 
+@interface BMSendOffer()
+{
+    UIImageView *imageView;
+    int toggle;
+}
+
+@end
+
 @implementation BMSendOffer
 
 - (id)initWithFrame:(CGRect)frame
@@ -17,6 +25,28 @@
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 5;
         self.layer.masksToBounds = YES;
+        
+        UILabel *selectLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 18.0f, self.frame.size.width, 40.0f)];
+        selectLabel.text = @" SELECT AN OFFER";
+        selectLabel.font = [UIFont fontWithName:@"Avenir-Black" size:20.0f];
+        selectLabel.textColor = [UIColor colorWithWhite:0.3f alpha:1.0f];
+        selectLabel.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:selectLabel];
+        
+        //left and right buttons
+        UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        leftButton.frame = CGRectMake(70.f, 23.0f, 30.0f, 30.0f);
+        leftButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Black" size:24.0f];
+        [leftButton setTitle:@"<" forState:UIControlStateNormal];
+        [leftButton addTarget:self action:@selector(switchPressed) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:leftButton];
+        
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        rightButton.frame = CGRectMake(305.f, 23.0f, 30.0f, 30.0f);
+        rightButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Black" size:24.0f];
+        [rightButton setTitle:@">" forState:UIControlStateNormal];
+        [rightButton addTarget:self action:@selector(switchPressed) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:rightButton];
         
         // cancel and send buttons
         UIButton *sendButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -34,13 +64,27 @@
         [self addSubview:cancelButton];
         
         // offer image
-        UIImageView *offer1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"offer1.jpg"]];
-        offer1.frame = CGRectMake(10.0f, 10.0f, self.frame.size.width-20.0f, 550.0f);
-        [self addSubview:offer1];
+        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"offer1.jpg"]];
+        imageView.frame = CGRectMake(10.0f, 65.0f, self.frame.size.width-20.0f, 550.0f);
+        [self addSubview:imageView];
+        
+        toggle = 1;
         
         
     }
     return self;
+}
+
+- (void)switchPressed
+{
+    if (toggle == 1) {
+        imageView.image = [UIImage imageNamed:@"offer2.jpg"];
+        toggle = 2;
+    }
+    else {
+        imageView.image = [UIImage imageNamed:@"offer1.jpg"];
+        toggle = 1;
+    }
 }
 
 - (void)cancelPressed

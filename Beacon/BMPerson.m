@@ -29,8 +29,61 @@
         [recognizer setNumberOfTapsRequired:1];
         [self addGestureRecognizer:recognizer];
         
+        [NSTimer scheduledTimerWithTimeInterval:3.0
+                                         target:self
+                                       selector:@selector(randomMovement)
+                                       userInfo:nil
+                                        repeats:YES];
+        
     }
     return self;
+}
+
+- (void)randomMovement
+{
+    int r = (arc4random() % 100);
+    int adj = (arc4random() % 20)+5;
+    NSLog(@"rolled a %d", r);
+    // x
+    if (r > 50) {
+        // +
+        if (r > 75) {
+            [UIView beginAnimations:nil context:nil];
+            [UIView setAnimationDuration:1.0];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            self.frame = CGRectMake(self.frame.origin.x+adj, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+            [UIView commitAnimations];
+        }
+        // -
+        else {
+            [UIView beginAnimations:nil context:nil];
+            [UIView setAnimationDuration:1.0];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            self.frame = CGRectMake(self.frame.origin.x-adj, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+            [UIView commitAnimations];
+            
+        }
+    }
+    // y
+    else {
+        // +
+        if (r < 25) {
+            [UIView beginAnimations:nil context:nil];
+            [UIView setAnimationDuration:1.0];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height+adj);
+            [UIView commitAnimations];
+            
+        }
+        // -
+        else {
+            [UIView beginAnimations:nil context:nil];
+            [UIView setAnimationDuration:1.0];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height-adj);
+            [UIView commitAnimations];
+        }
+    }
 }
 
 - (void)imageTapped
