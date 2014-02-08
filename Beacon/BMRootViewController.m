@@ -8,9 +8,12 @@
 
 #import "BMRootViewController.h"
 #import "BMPerson.h"
+#import "BMBeacon.h"
+#import "BMBackground.h"
 #import <MapKit/MapKit.h>
 
 #define PERSON_SIZE 25.0f
+#define BEACON_SIZE 30.0f
 
 @interface BMRootViewController ()
 
@@ -30,6 +33,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    BMBackground *background = [[BMBackground alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.height, self.view.frame.size.width)];
+    [self.view addSubview:background];
+
+    
     
     // beacon code to get devices in range goes here
     
@@ -60,6 +68,11 @@
     person4.image = image4;
     person4.info = info;
     [self.view addSubview:person4];
+    
+    BMBeacon *beacon1 = [[BMBeacon alloc] initWithFrame:CGRectMake(300.0f, 300.0f, 80.0f, 50.0f)];
+    [self.view addSubview:beacon1];
+    
+
     
 }
 
