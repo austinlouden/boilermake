@@ -10,6 +10,7 @@
 #import "BMPerson.h"
 #import "BMBeacon.h"
 #import "BMBackground.h"
+#import "BMHTTPClient.h"
 #import <MapKit/MapKit.h>
 
 #define PERSON_SIZE 25.0f
@@ -79,8 +80,14 @@
     beacon3.frame = CGRectMake(560.0f, 640.0f, 80.0f, 50.0f);
     [self.view addSubview:beacon3];
     
+    // networking
+    [[BMHTTPClient sharedClient] GET:@"getLocation.php" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"error: %@", error);
+    }];
+    
 }
-
 
 - (void)didReceiveMemoryWarning
 {
