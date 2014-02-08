@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BMRootViewController : UIViewController
-
+@property (nonatomic, strong) NSArray *liveDevices;
 @end
