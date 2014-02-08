@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BMBeacon.h"
 
 @interface BMProgrammer : UIView
-- (id)initWithTitle:(NSString*)title;
+@property (nonatomic, strong) BMBeacon *beacon;
+- (id)initWithBeacon:(BMBeacon *)beacon;
 @end

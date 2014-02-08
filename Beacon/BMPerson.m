@@ -43,7 +43,7 @@
 {
     int r = (arc4random() % 100);
     int adj = (arc4random() % 20)+5;
-    NSLog(@"rolled a %d", r);
+
     // x
     if (r > 50) {
         // +

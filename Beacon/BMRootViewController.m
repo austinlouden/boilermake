@@ -72,14 +72,17 @@
     
     BMBeacon *beacon1 = [[BMBeacon alloc] initWithTitle:@"BEACON 1"];
     beacon1.frame = CGRectMake(100.0f, 175.0f, 80.0f, 50.0f);
+    beacon1.tag = 1;
     [self.view addSubview:beacon1];
     
     BMBeacon *beacon2 = [[BMBeacon alloc] initWithTitle:@"BEACON 2"];
     beacon2.frame = CGRectMake(480.0f, 175.0f, 80.0f, 50.0f);
+    beacon2.tag = 2;
     [self.view addSubview:beacon2];
     
     BMBeacon *beacon3 = [[BMBeacon alloc] initWithTitle:@"BEACON 3"];
     beacon3.frame = CGRectMake(580.0f, 564.0f, 80.0f, 50.0f);
+    beacon3.tag = 3;
     [self.view addSubview:beacon3];
     
     /* networking
@@ -127,11 +130,9 @@
                 switch (location) {
                     case 1:
                         frame = CGRectMake(110.0f+(arc4random() % 30), 145.0f, PERSON_SIZE, PERSON_SIZE);
-                        NSLog(@"frame: %@", NSStringFromCGRect(frame));
                         break;
                     case 2:
                         frame = CGRectMake(480.0f+(arc4random() % 30), 145.0f, PERSON_SIZE, PERSON_SIZE);
-                        NSLog(@"frame: %@", NSStringFromCGRect(frame));
                         break;
                     default:
                         break;

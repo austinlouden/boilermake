@@ -10,5 +10,7 @@
 
 @interface BMBeacon : UIView
 @property (nonatomic, strong) NSString *title;
+@property BOOL autopilot;
+@property int selectedOffer;
 - (id)initWithTitle:(NSString*)title;
 @end

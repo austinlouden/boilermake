@@ -56,14 +56,13 @@
 
 - (void)imageTapped
 {
-    NSLog(@"here");
     // remove any other popups from the superview
     for (UIView* view in [[self superview] subviews]) {
         if ([view isKindOfClass:[BMDetail class]])
             [view removeFromSuperview];
     }
     
-    BMProgrammer *detailView = [[BMProgrammer alloc] initWithTitle:_title];
+    BMProgrammer *detailView = [[BMProgrammer alloc] initWithBeacon:self];
     detailView.frame = CGRectMake(600.0f, 50.0f, 400.0f, [self superview].frame.size.width-100.0f);
     [[self superview] addSubview:detailView];
     
