@@ -42,12 +42,104 @@
         table3.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table3];
         
-        UILabel *table4 = [[UILabel alloc] initWithFrame:CGRectMake(735.0f, 764.0f, 250.0f, 50.0f)];
-        table4.text = @"AISLE 4";
+        UILabel *table4 = [[UILabel alloc] initWithFrame:CGRectMake(465.0f, 220.0f, 250.0f, 50.0f)];
+        table4.text = @"BEVERAGES";
+        table4.adjustsFontSizeToFitWidth = YES;
         table4.textAlignment = NSTextAlignmentCenter;
-        table4.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];
+        table4.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
         table4.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table4];
+        
+        UILabel *table5 = [[UILabel alloc] initWithFrame:CGRectMake(465.0f, 740.0f, 250.0f, 50.0f)];
+        table5.text = @"FROZEN GOODS";
+        table5.adjustsFontSizeToFitWidth = YES;
+        table5.textAlignment = NSTextAlignmentCenter;
+        table5.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
+        table5.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+        [self addSubview:table5];
+        
+        UILabel *table6 = [[UILabel alloc] initWithFrame:CGRectMake(465.0f, 1000.0f, 250.0f, 50.0f)];
+        table6.text = @"CANNED GOODS";
+        table6.adjustsFontSizeToFitWidth = YES;
+        table6.textAlignment = NSTextAlignmentCenter;
+        table6.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
+        table6.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+        [self addSubview:table6];
+        
+        UILabel *table7 = [[UILabel alloc] initWithFrame:CGRectMake(1130.0f, 325.0f, 250.0f, 50.0f)];
+        table7.text = @"WINE";
+        [table7 setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
+        table7.adjustsFontSizeToFitWidth = YES;
+        table7.textAlignment = NSTextAlignmentCenter;
+        table7.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
+        table7.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+        [self addSubview:table7];
+        
+        UILabel *table8 = [[UILabel alloc] initWithFrame:CGRectMake(1355.0f, 325.0f, 250.0f, 50.0f)];
+        table8.text = @"CHIPS";
+        [table8 setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
+        table8.adjustsFontSizeToFitWidth = YES;
+        table8.textAlignment = NSTextAlignmentCenter;
+        table8.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
+        table8.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+        [self addSubview:table8];
+        
+        UILabel *table9 = [[UILabel alloc] initWithFrame:CGRectMake(1585.0f, 325.0f, 250.0f, 50.0f)];
+        table9.text = @"CANDY";
+        [table9 setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
+        table9.adjustsFontSizeToFitWidth = YES;
+        table9.textAlignment = NSTextAlignmentCenter;
+        table9.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
+        table9.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+        [self addSubview:table9];
+        
+        UILabel *table10 = [[UILabel alloc] initWithFrame:CGRectMake(1815.0f, 325.0f, 250.0f, 50.0f)];
+        table10.text = @"FLORAL";
+        [table10 setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
+        table10.adjustsFontSizeToFitWidth = YES;
+        table10.textAlignment = NSTextAlignmentCenter;
+        table10.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
+        table10.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+        [self addSubview:table10];
+        
+        
+        // DOWN
+        
+        UILabel *table7b = [[UILabel alloc] initWithFrame:CGRectMake(1130.0f, 780.0f, 250.0f, 50.0f)];
+        table7b.text = @"BEER";
+        [table7b setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
+        table7b.adjustsFontSizeToFitWidth = YES;
+        table7b.textAlignment = NSTextAlignmentCenter;
+        table7b.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
+        table7b.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+        [self addSubview:table7b];
+        
+        UILabel *table8b = [[UILabel alloc] initWithFrame:CGRectMake(1355.0f, 780.0f, 250.0f, 50.0f)];
+        table8b.text = @"LIQUOR";
+        [table8b setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
+        table8b.adjustsFontSizeToFitWidth = YES;
+        table8b.textAlignment = NSTextAlignmentCenter;
+        table8b.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
+        table8b.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+        [self addSubview:table8b];
+        
+        UILabel *table9b = [[UILabel alloc] initWithFrame:CGRectMake(1585.0f, 780.0f, 250.0f, 50.0f)];
+        table9b.text = @"CLEANING";
+        [table9b setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
+        table9b.adjustsFontSizeToFitWidth = YES;
+        table9b.textAlignment = NSTextAlignmentCenter;
+        table9b.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
+        table9b.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+        [self addSubview:table9b];
+        
+        UILabel *table10b = [[UILabel alloc] initWithFrame:CGRectMake(1815.0f, 780.0f, 250.0f, 50.0f)];
+        table10b.text = @"TOILETRIES";
+        [table10b setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
+        table10b.adjustsFontSizeToFitWidth = YES;
+        table10b.textAlignment = NSTextAlignmentCenter;
+        table10b.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
+        table10b.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+        [self addSubview:table10b];
         
 //        UILabel *entrance = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 1070.0f, 250.0f, 50.0f)];
 //        entrance.text = @"ENTRANCE";
