@@ -21,7 +21,13 @@
         
         // add the image
         SVPulsingAnnotationView *pulseView = [[SVPulsingAnnotationView alloc] initWithNothing];
-        pulseView.frame = CGRectMake(0.0f, 0.0f, 25.0f, 25.0f);
+        pulseView.frame = CGRectMake(0.0f, 0.0f, 50.0, 50.0f);
+        [pulseView setAnnotationColor:[UIColor colorWithRed:0.000 green:0.478 blue:1.000 alpha:0.8f]];
+        pulseView.pulseScaleFactor = 5.0f + (arc4random() % 5);
+        NSTimeInterval interval = (arc4random() % 1);
+        if (interval > 0.7)
+            interval = 0.5;
+        [pulseView setDelayBetweenPulseCycles:interval];
         [self addSubview:pulseView];
         
         // gesture recognizer

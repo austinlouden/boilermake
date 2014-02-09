@@ -10,11 +10,12 @@
 #import "BMPerson.h"
 #import "BMBeacon.h"
 #import "BMBackground.h"
+#import "BMSendOffer.h"
 #import "BMHTTPClient.h"
 #import <MapKit/MapKit.h>
 #include <stdlib.h>
 
-#define PERSON_SIZE 25.0f
+#define PERSON_SIZE 50.0f
 #define BEACON_SIZE 30.0f
 
 @interface BMRootViewController ()
@@ -44,23 +45,55 @@
     self.view.backgroundColor = [UIColor colorWithRed:(249.0f/255.0f) green:(245.0f/255.0f) blue:(237.0f/255.0f) alpha:1.0];
     
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.height, self.view.frame.size.height)];
-    scrollView.contentSize = CGSizeMake(2000.0f, 1400.0f);
+    scrollView.contentSize = CGSizeMake(2200.0f, 1600.0f);
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:scrollView];
     
     UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] init];
     recognizer.delegate = self;
     [scrollView addGestureRecognizer:recognizer];
     
-    BMBackground *background = [[BMBackground alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 2000.0f, 1300.0f)];
+    BMBackground *background = [[BMBackground alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 2200.0f, 1600.0f)];
     [scrollView addSubview:background];
     
-    UILabel *engageLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.height-115.0f, self.view.frame.size.width-35.0f, 115.0f, 35.0f)];
+    UILabel *engageLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.height-180.0f, self.view.frame.size.width-60.0f, 230.0f, 35.0f)];
     engageLabel.text = @"E N G A G E";
     engageLabel.textColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    engageLabel.font = [UIFont fontWithName:@"Avenir-Black" size:18.0f];
+    engageLabel.font = [UIFont fontWithName:@"Avenir-Black" size:24.0f];
+    engageLabel.layer.shadowColor = [engageLabel.textColor CGColor];
+    engageLabel.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+    engageLabel.layer.shadowRadius = 0.5;
+    engageLabel.layer.shadowOpacity = 0.5;
     [self.view addSubview:engageLabel];
     
+    // Buttons
+    // Broadcast
+    UIImage *blast = [UIImage imageNamed:@"blast.png"];
+    UIButton *blastButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [blastButton setBackgroundImage:blast forState:UIControlStateNormal];
+    [blastButton addTarget:self action:@selector(blastPressed) forControlEvents:UIControlEventTouchUpInside];
+    blastButton.frame = CGRectMake(60, 700, 40, 40);
+    blastButton.alpha = 0.8f;
+    [self.view addSubview:blastButton];
     
+    // Heatmap
+    UIImage *heat = [UIImage imageNamed:@"heatmap.png"];
+    UIButton *heatButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [heatButton setBackgroundImage:heat forState:UIControlStateNormal];
+    [heatButton addTarget:self action:@selector(heatPressed) forControlEvents:UIControlEventTouchUpInside];
+    heatButton.frame = CGRectMake(130, 700, 40, 40);
+    heatButton.alpha = 0.8f;
+    [self.view addSubview:heatButton];
+    
+    // Stats
+    UIImage *stats = [UIImage imageNamed:@"stats.png"];
+    UIButton *statsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [statsButton setBackgroundImage:stats forState:UIControlStateNormal];
+    [statsButton addTarget:self action:@selector(statsPressed) forControlEvents:UIControlEventTouchUpInside];
+    statsButton.frame = CGRectMake(205, 699, 38, 39);
+    statsButton.alpha = 0.8f;
+    [self.view addSubview:statsButton];
     
     // the random walk
     NSDictionary *info = @{@"name": @"Austin Louden", @"email": @"austinlouden@gmail.com"};
@@ -114,6 +147,24 @@
                                    userInfo:nil
                                     repeats:YES];
     
+    
+}
+
+- (void)blastPressed
+{
+    BMSendOffer *sendOffer = [[BMSendOffer alloc] initWithFrame:CGRectMake(600.0f, 50.0f, 400.0f, 680.0f)];
+    [scrollView addSubview:sendOffer];
+    
+}
+
+- (void)heatPressed
+{
+    NSLog(@"heat pressed ");
+}
+
+- (void)statsPressed
+{
+    NSLog(@"stats pressed");
     
 }
 

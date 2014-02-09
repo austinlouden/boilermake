@@ -41,6 +41,9 @@
 		8929446A18A69CC4006E67B6 /* offer2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8929446918A69CC4006E67B6 /* offer2.jpg */; };
 		8929446D18A69D90006E67B6 /* BMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929446C18A69D90006E67B6 /* BMHTTPClient.m */; };
 		8929447018A6DC91006E67B6 /* BMProgrammer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8929446F18A6DC91006E67B6 /* BMProgrammer.m */; };
+		AEAD089A18A7623600066789 /* blast.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD089718A7623600066789 /* blast.png */; };
+		AEAD089B18A7623600066789 /* heatmap.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD089818A7623600066789 /* heatmap.png */; };
+		AEAD089C18A7623600066789 /* stats.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD089918A7623600066789 /* stats.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,9 @@
 		8929446C18A69D90006E67B6 /* BMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMHTTPClient.m; sourceTree = "<group>"; };
 		8929446E18A6DC91006E67B6 /* BMProgrammer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMProgrammer.h; sourceTree = "<group>"; };
 		8929446F18A6DC91006E67B6 /* BMProgrammer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMProgrammer.m; sourceTree = "<group>"; };
+		AEAD089718A7623600066789 /* blast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blast.png; sourceTree = "<group>"; };
+		AEAD089818A7623600066789 /* heatmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heatmap.png; sourceTree = "<group>"; };
+		AEAD089918A7623600066789 /* stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stats.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,9 @@
 				8929443518A5EE22006E67B6 /* AUSTIN_small.png */,
 				8929444A18A68971006E67B6 /* offer1.jpg */,
 				8929446918A69CC4006E67B6 /* offer2.jpg */,
+				AEAD089718A7623600066789 /* blast.png */,
+				AEAD089818A7623600066789 /* heatmap.png */,
+				AEAD089918A7623600066789 /* stats.png */,
 				8929443C18A60E2A006E67B6 /* External */,
 				8929441218A5E331006E67B6 /* Images.xcassets */,
 				8929440718A5E331006E67B6 /* Supporting Files */,
@@ -321,7 +330,7 @@
 				ORGANIZATIONNAME = "Austin Louden";
 				TargetAttributes = {
 					892943FC18A5E331006E67B6 = {
-						DevelopmentTeam = 8Z7LDXRQ2C;
+						DevelopmentTeam = YGBRSATMW8;
 					};
 					8929441718A5E331006E67B6 = {
 						TestTargetID = 892943FC18A5E331006E67B6;
@@ -353,6 +362,9 @@
 			files = (
 				8929444B18A68971006E67B6 /* offer1.jpg in Resources */,
 				8929443618A5EE22006E67B6 /* AUSTIN_small.png in Resources */,
+				AEAD089A18A7623600066789 /* blast.png in Resources */,
+				AEAD089C18A7623600066789 /* stats.png in Resources */,
+				AEAD089B18A7623600066789 /* heatmap.png in Resources */,
 				8929440B18A5E331006E67B6 /* InfoPlist.strings in Resources */,
 				8929441318A5E331006E67B6 /* Images.xcassets in Resources */,
 				8929446A18A69CC4006E67B6 /* offer2.jpg in Resources */,

@@ -18,10 +18,10 @@
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:(249.0f/255.0f) green:(245.0f/255.0f) blue:(237.0f/255.0f) alpha:1.0];
         
-        UILabel *table1 = [[UILabel alloc] initWithFrame:CGRectMake(735.0f, 194.0f, 250.0f, 50.0f)];
-        table1.text = @"AISLE 1";
+        UILabel *table1 = [[UILabel alloc] initWithFrame:CGRectMake(250.0f, 480.0f, 150.0f, 50.0f)];
+        table1.text = @"BREAD";
         table1.textAlignment = NSTextAlignmentCenter;
-        table1.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];
+        table1.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
         table1.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table1];
         
@@ -46,12 +46,12 @@
         table4.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table4];
         
-        UILabel *entrance = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 1070.0f, 250.0f, 50.0f)];
-        entrance.text = @"ENTRANCE";
-        entrance.textAlignment = NSTextAlignmentCenter;
-        entrance.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];
-        entrance.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
-        [self addSubview:entrance];
+//        UILabel *entrance = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 1070.0f, 250.0f, 50.0f)];
+//        entrance.text = @"ENTRANCE";
+//        entrance.textAlignment = NSTextAlignmentCenter;
+//        entrance.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];
+//        entrance.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
+//        [self addSubview:entrance];
     }
     return self;
 }
@@ -72,7 +72,7 @@
  // Create our drawing path
  
  UIBezierPath* drawingPath = [UIBezierPath bezierPath];
-    drawingPath.lineWidth = 0.3f;
+    drawingPath.lineWidth = 0.5f;
  
  // Draw a grid
  // first the vertical lines
@@ -83,21 +83,24 @@
     
     
     CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, 1.5f);
     CGContextSetRGBFillColor(context, (235.0f/255.0f), (223.0f/255.0f), (200.0f/255.0f), 1.0);
     CGContextSetRGBStrokeColor(context, (202.0f/255.0f), (188.0f/255.0f), (167.0f/255.0f), 1.0);
     for (int i=0;i<3;i++) {
         for (int j=0;j<4;j++) {
-            CGRect rectangle = CGRectMake(60+255*i, 193+190*j, 250, 50);
-            CGPathRef path = CGPathCreateWithRect(rectangle, NULL);
-            CGContextAddPath(context, path);
-            CGContextDrawPath(context, kCGPathFillStroke);
-            CGPathRelease(path);
+            if( j != 1) {
+                CGRect rectangle = CGRectMake(200+300*i-60, 193+260*j, 300, 100);
+                CGPathRef path = CGPathCreateWithRect(rectangle, NULL);
+                CGContextAddPath(context, path);
+                CGContextDrawPath(context, kCGPathFillStroke);
+                CGPathRelease(path);
+            }
         }
     }
     
     for (int i=0;i<2;i++) {
         for (int j=0;j<4;j++) {
-            CGRect rectangle = CGRectMake(1200+230*j, 193+455*i, 50, 250);
+            CGRect rectangle = CGRectMake(1200+230*j, 193+455*i, 100, 300);
             CGPathRef path = CGPathCreateWithRect(rectangle, NULL);
             CGContextAddPath(context, path);
             CGContextDrawPath(context, kCGPathFillStroke);
@@ -105,7 +108,27 @@
         }
     }
     
-
+  //  CGRect bounds = [self bounds];
+    
+//    CGPoint center;
+//    center.x = bounds.origin.x + bounds.size.width / 2.0;
+//    center.y = bounds.origin.y + bounds.size.height / 2.0;
+//    CGContextSetRGBFillColor(context, (235.0f/255.0f), (223.0f/255.0f), (200.0f/255.0f), 1.0);
+//    CGContextSetRGBStrokeColor(context, (202.0f/255.0f), (188.0f/255.0f), (167.0f/255.0f), 1.0);
+//    CGContextSetLineWidth(context, 2.0);
+//    CGContextFillEllipseInRect (context, borderRect);
+//    CGContextStrokeEllipseInRect(context, borderRect);
+//    CGContextFillPath(context);
+    
+    
+    for (int j = 0; j<3; j++) {
+        CGRect box = CGRectMake(220+j*300, 400, 200, 200);
+        UIBezierPath *ballBezierPath = [UIBezierPath bezierPathWithOvalInRect:box];
+        ballBezierPath.lineWidth = 3.0f;
+        [ballBezierPath stroke];
+        [ballBezierPath fill];
+        [self setBackgroundColor:[UIColor clearColor]]; // Happens with and without this line
+    }
     
 
 }
