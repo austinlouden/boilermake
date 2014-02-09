@@ -87,7 +87,7 @@
     CGContextSetRGBStrokeColor(context, (202.0f/255.0f), (188.0f/255.0f), (167.0f/255.0f), 1.0);
     for (int i=0;i<3;i++) {
         for (int j=0;j<4;j++) {
-            CGRect rectangle = CGRectMake(60+255*i, 193+130*j, 250, 50);
+            CGRect rectangle = CGRectMake(60+255*i, 193+190*j, 250, 50);
             CGPathRef path = CGPathCreateWithRect(rectangle, NULL);
             CGContextAddPath(context, path);
             CGContextDrawPath(context, kCGPathFillStroke);
@@ -95,26 +95,16 @@
         }
     }
     
+    for (int i=0;i<2;i++) {
+        for (int j=0;j<4;j++) {
+            CGRect rectangle = CGRectMake(1200+230*j, 193+455*i, 50, 250);
+            CGPathRef path = CGPathCreateWithRect(rectangle, NULL);
+            CGContextAddPath(context, path);
+            CGContextDrawPath(context, kCGPathFillStroke);
+            CGPathRelease(path);
+        }
+    }
     
-    //draw some tables
-/*
-    
-    CGRect rectangle2 = CGRectMake(300, 193, 250, 50);
-    CGPathRef path2 = CGPathCreateWithRect(rectangle2, NULL);
-    CGContextSetRGBFillColor(context, (235.0f/255.0f), (223.0f/255.0f), (200.0f/255.0f), 1.0);
-    CGContextSetRGBStrokeColor(context, (202.0f/255.0f), (188.0f/255.0f), (167.0f/255.0f), 1.0);
-    CGContextAddPath(context, path2);
-    CGContextDrawPath(context, kCGPathFillStroke);
-    CGPathRelease(path2);
-    
-    CGRect rectangle3 = CGRectMake(560, 193, 250, 50);
-    CGPathRef path3 = CGPathCreateWithRect(rectangle3, NULL);
-    CGContextSetRGBFillColor(context, (235.0f/255.0f), (223.0f/255.0f), (200.0f/255.0f), 1.0);
-    CGContextSetRGBStrokeColor(context, (202.0f/255.0f), (188.0f/255.0f), (167.0f/255.0f), 1.0);
-    CGContextAddPath(context, path3);
-    CGContextDrawPath(context, kCGPathFillStroke);
-    CGPathRelease(path3);
- */
 
     
 

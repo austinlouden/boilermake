@@ -91,7 +91,7 @@
 
 - (void)offerPressed
 {
-    BMSendOffer *sendOffer = [[BMSendOffer alloc] initWithFrame:CGRectMake(600.0f, 50.0f, 400.0f, [self superview].frame.size.width-100.0f)];
+    BMSendOffer *sendOffer = [[BMSendOffer alloc] initWithFrame:CGRectMake(600.0f, 50.0f, 400.0f, 680.0f)];
     [[self superview] addSubview:sendOffer];
 }
 

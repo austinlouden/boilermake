@@ -320,6 +320,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Austin Louden";
 				TargetAttributes = {
+					892943FC18A5E331006E67B6 = {
+						DevelopmentTeam = 8Z7LDXRQ2C;
+					};
 					8929441718A5E331006E67B6 = {
 						TestTargetID = 892943FC18A5E331006E67B6;
 					};
@@ -511,10 +514,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Beacon/Beacon-Prefix.pch";
 				INFOPLIST_FILE = "Beacon/Beacon-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -524,10 +530,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Beacon/Beacon-Prefix.pch";
 				INFOPLIST_FILE = "Beacon/Beacon-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -593,6 +602,7 @@
 				8929442B18A5E331006E67B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8929442C18A5E331006E67B6 /* Build configuration list for PBXNativeTarget "BeaconTests" */ = {
 			isa = XCConfigurationList;
@@ -601,6 +611,7 @@
 				8929442E18A5E331006E67B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

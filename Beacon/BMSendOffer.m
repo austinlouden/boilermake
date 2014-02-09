@@ -98,6 +98,7 @@
     [[BMHTTPClient sharedClient] POST:@"ipadReceive.php" parameters:@{@"uuid": @50, @"promoId": @1} constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
     } success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"%@", responseObject);
+        [self removeFromSuperview];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"error: %@", error);
     }];

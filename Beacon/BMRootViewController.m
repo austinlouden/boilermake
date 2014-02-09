@@ -18,6 +18,10 @@
 #define BEACON_SIZE 30.0f
 
 @interface BMRootViewController ()
+{
+    UIScrollView *scrollView;
+    int currentLocation;
+}
 
 @end
 
@@ -37,11 +41,23 @@
 {
     [super viewDidLoad];
     
-    BMBackground *background = [[BMBackground alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.height, self.view.frame.size.width)];
-    [self.view addSubview:background];
+    self.view.backgroundColor = [UIColor colorWithRed:(249.0f/255.0f) green:(245.0f/255.0f) blue:(237.0f/255.0f) alpha:1.0];
+    
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.height, self.view.frame.size.height)];
+    scrollView.contentSize = CGSizeMake(2000.0f, 2000.0f);
+    [self.view addSubview:scrollView];
+    
+    BMBackground *background = [[BMBackground alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 2000.0f, 2000.0f)];
+    [scrollView addSubview:background];
+    
+    UILabel *engageLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.height-115.0f, self.view.frame.size.width-35.0f, 115.0f, 35.0f)];
+    engageLabel.text = @"E N G A G E";
+    engageLabel.textColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
+    engageLabel.font = [UIFont fontWithName:@"Avenir-Black" size:16.0f];
+    [self.view addSubview:engageLabel];
+    
     
     NSDictionary *info = @{@"name": @"Austin Louden", @"email": @"austinlouden@gmail.com"};
-    
     
     BMPerson *person1 = [[BMPerson alloc] initWithFrame:CGRectMake(260.0f, 120.0f, PERSON_SIZE, PERSON_SIZE)];
     UIImage *image1 = [UIImage imageNamed:@"AUSTIN_small.png"];
@@ -73,17 +89,17 @@
     BMBeacon *beacon1 = [[BMBeacon alloc] initWithTitle:@"BEACON 1"];
     beacon1.frame = CGRectMake(100.0f, 175.0f, 80.0f, 50.0f);
     beacon1.tag = 1;
-    [self.view addSubview:beacon1];
+    [scrollView addSubview:beacon1];
     
     BMBeacon *beacon2 = [[BMBeacon alloc] initWithTitle:@"BEACON 2"];
     beacon2.frame = CGRectMake(480.0f, 175.0f, 80.0f, 50.0f);
     beacon2.tag = 2;
-    [self.view addSubview:beacon2];
+    [scrollView addSubview:beacon2];
     
     BMBeacon *beacon3 = [[BMBeacon alloc] initWithTitle:@"BEACON 3"];
     beacon3.frame = CGRectMake(580.0f, 564.0f, 80.0f, 50.0f);
     beacon3.tag = 3;
-    [self.view addSubview:beacon3];
+    [scrollView addSubview:beacon3];
     
      //networking
     [NSTimer scheduledTimerWithTimeInterval:1.0
@@ -120,7 +136,6 @@
 - (void)getDevices
 {
     [[BMHTTPClient sharedClient] GET:@"getLocation.php" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        //NSLog(@"%@", responseObject);
         if (!_liveDevices) {
             _liveDevices = responseObject;
             for (NSDictionary *device in _liveDevices) {
@@ -128,6 +143,7 @@
                 // determine the frame based on [device objectForKey:@"location"]
                 CGRect frame;
                 int location = [[device objectForKey:@"location"] integerValue];
+                currentLocation = location;
                 switch (location) {
                     case 1:
                         frame = CGRectMake(110.0f+(arc4random() % 30), 145.0f, PERSON_SIZE, PERSON_SIZE);
@@ -147,40 +163,32 @@
                     person.tag = 15;
                     person.image = image1;
                     person.info = info;
-                    [self.view addSubview:person];
+                    [scrollView addSubview:person];
                 }
             }
         }
         else {
-            for (NSDictionary *device in responseObject) {
-                int uuid = [[device objectForKey:@"uuid"] integerValue];
-                int location = [[device objectForKey:@"location"] integerValue];
-                for(NSDictionary *liveDevice in _liveDevices) {
-                    if (uuid == [[liveDevice objectForKey:@"uuid"] integerValue] && location == [[liveDevice objectForKey:@"location"] integerValue]) {
-                        return;
-                    }
-                    else {
-                        if (location == 1) {
-                            BMPerson *person = (BMPerson*)[self.view viewWithTag:15];
-                            [UIView beginAnimations:nil context:nil];
-                            [UIView setAnimationDuration:1.0];
-                            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-                            person.frame = CGRectMake(110.0f, 145.0f, PERSON_SIZE, PERSON_SIZE);
-                            [UIView commitAnimations];
-                            [liveDevice setValue:@1 forKey:@"location"];
-                        }
-                        else {
-                            BMPerson *person = (BMPerson*)[self.view viewWithTag:15];
-                            [UIView beginAnimations:nil context:nil];
-                            [UIView setAnimationDuration:1.0];
-                            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-                            person.frame = CGRectMake(480.0f, 145.0f, PERSON_SIZE, PERSON_SIZE);
-                            [UIView commitAnimations];
-                        }
-                    }
+            int location = [[[responseObject objectAtIndex:0] objectForKey:@"location"] integerValue];
+            if (location != currentLocation) {
+                if (location == 1) {
+                    BMPerson *person = (BMPerson*)[self.view viewWithTag:15];
+                    [UIView beginAnimations:nil context:nil];
+                    [UIView setAnimationDuration:1.0];
+                    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+                    person.frame = CGRectMake(110.0f, 145.0f, PERSON_SIZE, PERSON_SIZE);
+                    [UIView commitAnimations];
+                    currentLocation = location;
+                }
+                else {
+                    BMPerson *person = (BMPerson*)[self.view viewWithTag:15];
+                    [UIView beginAnimations:nil context:nil];
+                    [UIView setAnimationDuration:1.0];
+                    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+                    person.frame = CGRectMake(480.0f, 145.0f, PERSON_SIZE, PERSON_SIZE);
+                    [UIView commitAnimations];
+                    currentLocation = location;
                 }
             }
-            
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"error: %@", error);
