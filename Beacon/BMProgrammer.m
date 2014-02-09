@@ -77,13 +77,11 @@
         select2.font = [UIFont fontWithName:@"Avenir-Black" size:16.0f];
         select2.textColor = [UIColor colorWithWhite:0.3f alpha:1.0f];
         select2.textAlignment = NSTextAlignmentLeft;
-        select2.hidden = YES;
         [self addSubview:select2];
         
         // offer image
         imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"offer1.jpg"]];
         imageView.frame = CGRectMake(15.0f, 180.0f, 300.0f, 400.0f);
-        imageView.hidden = YES;
         [self addSubview:imageView];
         
         toggle = 1;
@@ -111,16 +109,7 @@
 
 - (void)autopilotEngaged
 {
-    if(select2.hidden) {
-        select2.hidden = NO;
-        imageView.hidden = NO;
-    }
-    else {
-        select2.hidden = YES;
-        imageView.hidden = YES;
-    }
-
-
+    ;
 }
 
 /*

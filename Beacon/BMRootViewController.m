@@ -44,47 +44,49 @@
     self.view.backgroundColor = [UIColor colorWithRed:(249.0f/255.0f) green:(245.0f/255.0f) blue:(237.0f/255.0f) alpha:1.0];
     
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.height, self.view.frame.size.height)];
-    scrollView.contentSize = CGSizeMake(2000.0f, 2000.0f);
+    scrollView.contentSize = CGSizeMake(2000.0f, 1400.0f);
     [self.view addSubview:scrollView];
     
-    BMBackground *background = [[BMBackground alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 2000.0f, 2000.0f)];
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] init];
+    recognizer.delegate = self;
+    [scrollView addGestureRecognizer:recognizer];
+    
+    BMBackground *background = [[BMBackground alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 2000.0f, 1300.0f)];
     [scrollView addSubview:background];
     
     UILabel *engageLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.height-115.0f, self.view.frame.size.width-35.0f, 115.0f, 35.0f)];
     engageLabel.text = @"E N G A G E";
     engageLabel.textColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
-    engageLabel.font = [UIFont fontWithName:@"Avenir-Black" size:16.0f];
+    engageLabel.font = [UIFont fontWithName:@"Avenir-Black" size:18.0f];
     [self.view addSubview:engageLabel];
     
     
+    
+    // the random walk
     NSDictionary *info = @{@"name": @"Austin Louden", @"email": @"austinlouden@gmail.com"};
-    
-    BMPerson *person1 = [[BMPerson alloc] initWithFrame:CGRectMake(260.0f, 120.0f, PERSON_SIZE, PERSON_SIZE)];
     UIImage *image1 = [UIImage imageNamed:@"AUSTIN_small.png"];
-    person1.image = image1;
-    person1.info = info;
-    //[self.view addSubview:person1];
     
-    /*
-    BMPerson *person2 = [[BMPerson alloc] initWithFrame:CGRectMake(100.0f, 420.0f, PERSON_SIZE, PERSON_SIZE)];
-    UIImage *image2 = [UIImage imageNamed:@"AUSTIN_small.png"];
-    person2.image = image2;
-    person2.info = info;
-    [self.view addSubview:person2];
+    NSArray *startingPoints = [[NSArray alloc] initWithObjects:[NSValue valueWithCGPoint:CGPointMake(1265.0, 397.0)],[NSValue valueWithCGPoint:CGPointMake(1734, 228)], [NSValue valueWithCGPoint:CGPointMake(1503, 404)], [NSValue valueWithCGPoint:CGPointMake(1267.0f, 682.0f)], [NSValue valueWithCGPoint:CGPointMake(1405.0f, 860.0f)],[NSValue valueWithCGPoint:CGPointMake(1729.0f, 829.0f)], nil];
     
-    BMPerson *person3 = [[BMPerson alloc] initWithFrame:CGRectMake(700.0f, 636.0f, PERSON_SIZE, PERSON_SIZE)];
-    UIImage *image3 = [UIImage imageNamed:@"AUSTIN_small.png"];
-    person3.image = image3;
-    person3.info = info;
-    [self.view addSubview:person3];
+    for (NSValue *value in startingPoints) {
+        CGPoint origin = [value CGPointValue];
+        BMPerson *person = [[BMPerson alloc] initWithFrame:CGRectMake(origin.x, origin.y, PERSON_SIZE, PERSON_SIZE)];
+        person.image = image1;
+        person.info = info;
+        [scrollView addSubview:person];
+    }
     
-    BMPerson *person4 = [[BMPerson alloc] initWithFrame:CGRectMake(700.0f, 150.0f, PERSON_SIZE, PERSON_SIZE)];
-    UIImage *image4 = [UIImage imageNamed:@"AUSTIN_small.png"];
-    person4.image = image4;
-    person4.info = info;
-    [self.view addSubview:person4];
-     */
-     
+    NSArray *beaconPoints = [[NSArray alloc] initWithObjects:[NSValue valueWithCGPoint:CGPointMake(1221, 638)], [NSValue valueWithCGPoint:CGPointMake(1680.0, 640.0)], [NSValue valueWithCGPoint:CGPointMake(1449, 225)], nil];
+    
+    int beaconCount = 4;
+    for (NSValue *value in beaconPoints) {
+        CGPoint origin = [value CGPointValue];
+        BMBeacon *beacon = [[BMBeacon alloc] initWithTitle:[NSString stringWithFormat:@"BEACON %d", beaconCount]];
+        beacon.frame = CGRectMake(origin.x, origin.y, BEACON_SIZE, BEACON_SIZE);
+        [scrollView addSubview:beacon];
+        beaconCount++;
+    }
+    
     
     BMBeacon *beacon1 = [[BMBeacon alloc] initWithTitle:@"BEACON 1"];
     beacon1.frame = CGRectMake(100.0f, 175.0f, 80.0f, 50.0f);
@@ -101,23 +103,16 @@
     beacon3.tag = 3;
     [scrollView addSubview:beacon3];
     
+    BMBeacon *entranceBeacon = [[BMBeacon alloc] initWithTitle:@"BEACON 7"];
+    entranceBeacon.frame = CGRectMake(200.0f, 980.0f, 80.0f, 50.0f);
+    [scrollView addSubview:entranceBeacon];
+    
      //networking
     [NSTimer scheduledTimerWithTimeInterval:1.0
                                      target:self
                                    selector:@selector(getDevices)
                                    userInfo:nil
                                     repeats:YES];
-     
-    
-    
-    /* test
-    UIButton *test = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [test setTitle:@"Switch" forState:UIControlStateNormal];
-    test.frame = CGRectMake(0.0f, 0.0f, 80.0f, 30.0f);
-    [test addTarget:self action:@selector(testSwitch) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:test];
-    [self getDevices];
-     */
     
     
 }
@@ -194,6 +189,13 @@
         NSLog(@"error: %@", error);
     }];
     
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    CGPoint location = [touch locationInView:scrollView];
+    NSLog(@"%@", NSStringFromCGPoint(location));
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning

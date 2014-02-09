@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BMRootViewController : UIViewController
+@interface BMRootViewController : UIViewController <UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSArray *liveDevices;
 @end

@@ -25,28 +25,28 @@
         table1.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table1];
         
-        UILabel *table2 = [[UILabel alloc] initWithFrame:CGRectMake(735.0f, 324.0f, 250.0f, 50.0f)];
+        UILabel *table2 = [[UILabel alloc] initWithFrame:CGRectMake(735.0f, 384.0f, 250.0f, 50.0f)];
         table2.text = @"AISLE 2";
         table2.textAlignment = NSTextAlignmentCenter;
         table2.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];
         table2.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table2];
         
-        UILabel *table3 = [[UILabel alloc] initWithFrame:CGRectMake(735.0f, 454.0f, 250.0f, 50.0f)];
+        UILabel *table3 = [[UILabel alloc] initWithFrame:CGRectMake(735.0f, 574.0f, 250.0f, 50.0f)];
         table3.text = @"AISLE 3";
         table3.textAlignment = NSTextAlignmentCenter;
         table3.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];
         table3.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table3];
         
-        UILabel *table4 = [[UILabel alloc] initWithFrame:CGRectMake(735.0f, 584.0f, 250.0f, 50.0f)];
+        UILabel *table4 = [[UILabel alloc] initWithFrame:CGRectMake(735.0f, 764.0f, 250.0f, 50.0f)];
         table4.text = @"AISLE 4";
         table4.textAlignment = NSTextAlignmentCenter;
         table4.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];
         table4.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table4];
         
-        UILabel *entrance = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 10.0f, 250.0f, 50.0f)];
+        UILabel *entrance = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 1070.0f, 250.0f, 50.0f)];
         entrance.text = @"ENTRANCE";
         entrance.textAlignment = NSTextAlignmentCenter;
         entrance.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];

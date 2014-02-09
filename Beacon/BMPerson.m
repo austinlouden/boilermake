@@ -29,20 +29,28 @@
         [recognizer setNumberOfTapsRequired:1];
         [self addGestureRecognizer:recognizer];
         
+        /*
         [NSTimer scheduledTimerWithTimeInterval:3.0
                                          target:self
                                        selector:@selector(randomMovement)
                                        userInfo:nil
                                         repeats:YES];
+         */
         
     }
+    
     return self;
+}
+
+- (void)startWalking
+{
+    
 }
 
 - (void)randomMovement
 {
     int r = (arc4random() % 100);
-    int adj = (arc4random() % 20)+5;
+    int adj = (arc4random() % 15)+5;
 
     // x
     if (r > 50) {
