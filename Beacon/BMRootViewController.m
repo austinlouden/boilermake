@@ -112,9 +112,9 @@
         tag++;
     }
     
-    NSArray *beaconPoints = [[NSArray alloc] initWithObjects:[NSValue valueWithCGPoint:CGPointMake(1221, 638)], [NSValue valueWithCGPoint:CGPointMake(1680.0, 640.0)], [NSValue valueWithCGPoint:CGPointMake(1449, 225)], nil];
+    NSArray *beaconPoints = [[NSArray alloc] initWithObjects:[NSValue valueWithCGPoint:CGPointMake(1165, 640)], [NSValue valueWithCGPoint:CGPointMake(1395, 640)], [NSValue valueWithCGPoint:CGPointMake(1630.0, 640.0)], [NSValue valueWithCGPoint:CGPointMake(1860, 640.0)], [NSValue valueWithCGPoint:CGPointMake(1265, 485)], [NSValue valueWithCGPoint:CGPointMake(1495, 485)], [NSValue valueWithCGPoint:CGPointMake(1730.0, 485)], [NSValue valueWithCGPoint:CGPointMake(1960, 485)], [NSValue valueWithCGPoint:CGPointMake(1165, 185)], [NSValue valueWithCGPoint:CGPointMake(1395, 185)], [NSValue valueWithCGPoint:CGPointMake(1630.0, 185)], [NSValue valueWithCGPoint:CGPointMake(1860, 185 )], [NSValue valueWithCGPoint:CGPointMake(1265, 940)], [NSValue valueWithCGPoint:CGPointMake(1495, 940)], [NSValue valueWithCGPoint:CGPointMake(1730.0, 940)], [NSValue valueWithCGPoint:CGPointMake(1960, 940)], nil];
     
-    int beaconCount = 4;
+    int beaconCount = 8;
     for (NSValue *value in beaconPoints) {
         CGPoint origin = [value CGPointValue];
         BMBeacon *beacon = [[BMBeacon alloc] initWithTitle:[NSString stringWithFormat:@"BEACON %d", beaconCount]];
@@ -125,23 +125,88 @@
     
     
     BMBeacon *beacon1 = [[BMBeacon alloc] initWithTitle:@"BEACON 1"];
-    beacon1.frame = CGRectMake(100.0f, 175.0f, 80.0f, 50.0f);
+    beacon1.frame = CGRectMake(105.0f, 235.0f, 80.0f, 50.0f);
     beacon1.tag = 1;
     [scrollView addSubview:beacon1];
     
     BMBeacon *beacon2 = [[BMBeacon alloc] initWithTitle:@"BEACON 2"];
-    beacon2.frame = CGRectMake(480.0f, 175.0f, 80.0f, 50.0f);
+    beacon2.frame = CGRectMake(406.5f, 235.0f, 80.0f, 50.0f);
     beacon2.tag = 2;
     [scrollView addSubview:beacon2];
     
     BMBeacon *beacon3 = [[BMBeacon alloc] initWithTitle:@"BEACON 3"];
-    beacon3.frame = CGRectMake(580.0f, 564.0f, 80.0f, 50.0f);
+    beacon3.frame = CGRectMake(706.5f, 235.0f, 80.0f, 50.0f);
     beacon3.tag = 3;
     [scrollView addSubview:beacon3];
     
+    BMBeacon *beacon4 = [[BMBeacon alloc] initWithTitle:@"BEACON 4"];
+    beacon4.frame = CGRectMake(1006.5f, 235.0f, 80.0f, 50.0f);
+    beacon4.tag = 3;
+    [scrollView addSubview:beacon4];
+    
+    BMBeacon *beacon1b = [[BMBeacon alloc] initWithTitle:@"BEACON 1"];
+    beacon1b.frame = CGRectMake(105.0f, 755.0f, 80.0f, 50.0f);
+    beacon1b.tag = 1;
+    [scrollView addSubview:beacon1b];
+    
+    BMBeacon *beacon2b = [[BMBeacon alloc] initWithTitle:@"BEACON 2"];
+    beacon2b.frame = CGRectMake(406.5f, 755.0f, 80.0f, 50.0f);
+    beacon2b.tag = 2;
+    [scrollView addSubview:beacon2b];
+    
+    BMBeacon *beacon3b = [[BMBeacon alloc] initWithTitle:@"BEACON 3"];
+    beacon3b.frame = CGRectMake(706.5f, 755.0f, 80.0f, 50.0f);
+    beacon3b.tag = 3;
+    [scrollView addSubview:beacon3b];
+    
+    BMBeacon *beacon4b = [[BMBeacon alloc] initWithTitle:@"BEACON 4"];
+    beacon4b.frame = CGRectMake(1006.5f, 755.0f, 80.0f, 50.0f);
+    beacon4b.tag = 3;
+    [scrollView addSubview:beacon4b];
+    
+    BMBeacon *beacon1c = [[BMBeacon alloc] initWithTitle:@"BEACON 1"];
+    beacon1c.frame = CGRectMake(105.0f, 1015.0f, 80.0f, 50.0f);
+    beacon1c.tag = 1;
+    [scrollView addSubview:beacon1c];
+    
+    BMBeacon *beacon2c = [[BMBeacon alloc] initWithTitle:@"BEACON 2"];
+    beacon2c.frame = CGRectMake(406.5f, 1015.0f, 80.0f, 50.0f);
+    beacon2c.tag = 2;
+    [scrollView addSubview:beacon2c];
+    
+    BMBeacon *beacon3c = [[BMBeacon alloc] initWithTitle:@"BEACON 3"];
+    beacon3c.frame = CGRectMake(706.5f, 1015.0f, 80.0f, 50.0f);
+    beacon3c.tag = 3;
+    [scrollView addSubview:beacon3c];
+    
+    BMBeacon *beacon4c = [[BMBeacon alloc] initWithTitle:@"BEACON 4"];
+    beacon4c.frame = CGRectMake(1006.5f, 1015.0f, 80.0f, 50.0f);
+    beacon4c.tag = 3;
+    [scrollView addSubview:beacon4c];
+
     BMBeacon *entranceBeacon = [[BMBeacon alloc] initWithTitle:@"BEACON 7"];
-    entranceBeacon.frame = CGRectMake(200.0f, 980.0f, 80.0f, 50.0f);
+    entranceBeacon.frame = CGRectMake(230.0f, 440.0f, 80.0f, 50.0f);
     [scrollView addSubview:entranceBeacon];
+    
+    BMBeacon *entranceBeacon2 = [[BMBeacon alloc] initWithTitle:@"BEACON 7"];
+    entranceBeacon2.frame = CGRectMake(530.0f, 440.0f, 80.0f, 50.0f);
+    [scrollView addSubview:entranceBeacon2];
+    
+    BMBeacon *entranceBeacon3 = [[BMBeacon alloc] initWithTitle:@"BEACON 7"];
+    entranceBeacon3.frame = CGRectMake(830.0f, 440.0f, 80.0f, 50.0f);
+    [scrollView addSubview:entranceBeacon3];
+    
+    BMBeacon *entranceBeacona = [[BMBeacon alloc] initWithTitle:@"BEACON 7"];
+    entranceBeacona.frame = CGRectMake(330.0f, 550.0f, 80.0f, 50.0f);
+    [scrollView addSubview:entranceBeacona];
+    
+    BMBeacon *entranceBeacon2a = [[BMBeacon alloc] initWithTitle:@"BEACON 7"];
+    entranceBeacon2a.frame = CGRectMake(630.0f, 550.0f, 80.0f, 50.0f);
+    [scrollView addSubview:entranceBeacon2a];
+    
+    BMBeacon *entranceBeacon3a = [[BMBeacon alloc] initWithTitle:@"BEACON 7"];
+    entranceBeacon3a.frame = CGRectMake(930.0f, 550.0f, 80.0f, 50.0f);
+    [scrollView addSubview:entranceBeacon3a];
     
      //networking
     [NSTimer scheduledTimerWithTimeInterval:1.0

@@ -32,20 +32,22 @@
         // add the image
         SVPulsingAnnotationView *pulseView = [[SVPulsingAnnotationView alloc] initWithNothing];
         pulseView.frame = CGRectMake(26.0f, 0.0f, 15.0f, 15.0f);
-        [pulseView setAnnotationColor:[UIColor colorWithRed:(237/255.0f) green:(129/255.0f) blue:(43/255.0f) alpha:0.5f]];
-        pulseView.pulseScaleFactor = 20.0f + (arc4random() % 5);
-        NSTimeInterval interval = (arc4random() % 1);
-        if (interval > 0.7)
-            interval = 0.5;
-        [pulseView setDelayBetweenPulseCycles:interval];
-        [self addSubview:pulseView];
+        [pulseView setAnnotationColor:[UIColor colorWithRed:(237/255.0f) green:(129/255.0f) blue:(43/255.0f) alpha:0.3f]];
+        pulseView.pulseScaleFactor = 17.0f + (arc4random() % 8);
+        NSTimeInterval interval = (arc4random() % 3);
+        int64_t delayInSeconds = (arc4random() % 3);
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [pulseView setDelayBetweenPulseCycles:interval];
+            [self addSubview:pulseView];
+        });
         
         // add the label
-        UILabel *beaconLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 12.0f, 80.0f, 30.0f)];
-        beaconLabel.font = [UIFont fontWithName:@"Avenir-Black" size:14.0f];
-        beaconLabel.text = title;
-        beaconLabel.textColor = [UIColor colorWithWhite:0.3f alpha:1.0f];
-        [self addSubview:beaconLabel];
+//        UILabel *beaconLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 12.0f, 80.0f, 30.0f)];
+//        beaconLabel.font = [UIFont fontWithName:@"Avenir-Black" size:14.0f];
+//        beaconLabel.text = title;
+//        beaconLabel.textColor = [UIColor colorWithWhite:0.3f alpha:1.0f];
+//        [self addSubview:beaconLabel];
         
         // gesture recognizer
         UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped)];
