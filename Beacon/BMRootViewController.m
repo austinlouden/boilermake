@@ -85,22 +85,23 @@
     beacon3.tag = 3;
     [self.view addSubview:beacon3];
     
-    /* networking
+     //networking
     [NSTimer scheduledTimerWithTimeInterval:1.0
                                      target:self
                                    selector:@selector(getDevices)
                                    userInfo:nil
                                     repeats:YES];
-     */
+     
     
     
-    // test
+    /* test
     UIButton *test = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [test setTitle:@"Switch" forState:UIControlStateNormal];
     test.frame = CGRectMake(0.0f, 0.0f, 80.0f, 30.0f);
     [test addTarget:self action:@selector(testSwitch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:test];
     [self getDevices];
+     */
     
     
 }
@@ -159,21 +160,20 @@
                         return;
                     }
                     else {
-                        
                         if (location == 1) {
                             BMPerson *person = (BMPerson*)[self.view viewWithTag:15];
                             [UIView beginAnimations:nil context:nil];
                             [UIView setAnimationDuration:1.0];
-                            [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+                            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
                             person.frame = CGRectMake(110.0f, 145.0f, PERSON_SIZE, PERSON_SIZE);
                             [UIView commitAnimations];
+                            [liveDevice setValue:@1 forKey:@"location"];
                         }
                         else {
                             BMPerson *person = (BMPerson*)[self.view viewWithTag:15];
                             [UIView beginAnimations:nil context:nil];
                             [UIView setAnimationDuration:1.0];
-                            [UIView setAnimationDelay:1.0f];
-                            [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+                            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
                             person.frame = CGRectMake(480.0f, 145.0f, PERSON_SIZE, PERSON_SIZE);
                             [UIView commitAnimations];
                         }

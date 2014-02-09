@@ -7,6 +7,7 @@
 //
 
 #import "BMSendOffer.h"
+#import "BMHTTPClient.h"
 
 @interface BMSendOffer()
 {
@@ -94,8 +95,12 @@
 
 - (void)sendPressed
 {
-    NSLog(@"send something to the server");
-    
+    [[BMHTTPClient sharedClient] POST:@"ipadReceive.php" parameters:@{@"uuid": @50, @"promoId": @1} constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    } success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"error: %@", error);
+    }];
 }
 
 /*
