@@ -150,6 +150,13 @@
                                    userInfo:nil
                                     repeats:YES];
     
+    [NSTimer scheduledTimerWithTimeInterval:25.0
+                                    target:self
+                                    selector:@selector(animatePeople)
+                                    userInfo:nil
+                            repeats:YES];
+    
+    
     [self animatePeople];
     
     
