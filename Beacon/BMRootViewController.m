@@ -99,14 +99,17 @@
     NSDictionary *info = @{@"name": @"Austin Louden", @"email": @"austinlouden@gmail.com"};
     UIImage *image1 = [UIImage imageNamed:@"AUSTIN_small.png"];
     
-    NSArray *startingPoints = [[NSArray alloc] initWithObjects:[NSValue valueWithCGPoint:CGPointMake(1265.0, 397.0)],[NSValue valueWithCGPoint:CGPointMake(1734, 228)], [NSValue valueWithCGPoint:CGPointMake(1503, 404)], [NSValue valueWithCGPoint:CGPointMake(1267.0f, 682.0f)], [NSValue valueWithCGPoint:CGPointMake(1405.0f, 860.0f)],[NSValue valueWithCGPoint:CGPointMake(1729.0f, 829.0f)], nil];
+    NSArray *startingPoints = [[NSArray alloc] initWithObjects:[NSValue valueWithCGPoint:CGPointMake(1335.0, 397.0)],[NSValue valueWithCGPoint:CGPointMake(1734, 228)], [NSValue valueWithCGPoint:CGPointMake(1503, 404)], [NSValue valueWithCGPoint:CGPointMake(1267.0f, 682.0f)], [NSValue valueWithCGPoint:CGPointMake(1405.0f, 860.0f)],[NSValue valueWithCGPoint:CGPointMake(1729.0f, 829.0f)], nil];
     
+    int tag = 41;
     for (NSValue *value in startingPoints) {
         CGPoint origin = [value CGPointValue];
         BMPerson *person = [[BMPerson alloc] initWithFrame:CGRectMake(origin.x, origin.y, PERSON_SIZE, PERSON_SIZE)];
         person.image = image1;
+        person.tag = tag;
         person.info = info;
         [scrollView addSubview:person];
+        tag++;
     }
     
     NSArray *beaconPoints = [[NSArray alloc] initWithObjects:[NSValue valueWithCGPoint:CGPointMake(1221, 638)], [NSValue valueWithCGPoint:CGPointMake(1680.0, 640.0)], [NSValue valueWithCGPoint:CGPointMake(1449, 225)], nil];
@@ -147,6 +150,33 @@
                                    userInfo:nil
                                     repeats:YES];
     
+    [self animatePeople];
+    
+    
+}
+
+- (void)animatePeople
+{
+    BMPerson *person1 = (BMPerson*)[self.view viewWithTag:41];
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:8.0];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    person1.frame = CGRectMake(1335.0f, 550.0f, PERSON_SIZE, PERSON_SIZE);
+    [UIView commitAnimations];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:3.0];
+    [UIView setAnimationDelay:8.0];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    person1.frame = CGRectMake(1585.0f, 550.0f, PERSON_SIZE, PERSON_SIZE);
+    [UIView commitAnimations];
+    
+    /*[UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:3.0];
+    [UIView setAnimationDelay:9.0];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    person1.frame = CGRectMake(1585.0f, 950.0f, PERSON_SIZE, PERSON_SIZE);
+    [UIView commitAnimations];*/
     
 }
 

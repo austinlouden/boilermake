@@ -18,24 +18,27 @@
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:(249.0f/255.0f) green:(245.0f/255.0f) blue:(237.0f/255.0f) alpha:1.0];
         
-        UILabel *table1 = [[UILabel alloc] initWithFrame:CGRectMake(250.0f, 480.0f, 150.0f, 50.0f)];
+        UILabel *table1 = [[UILabel alloc] initWithFrame:CGRectMake(245.0f, 480.0f, 150.0f, 50.0f)];
         table1.text = @"BREAD";
+        table1.adjustsFontSizeToFitWidth = YES;
         table1.textAlignment = NSTextAlignmentCenter;
         table1.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
         table1.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table1];
         
-        UILabel *table2 = [[UILabel alloc] initWithFrame:CGRectMake(735.0f, 384.0f, 250.0f, 50.0f)];
-        table2.text = @"AISLE 2";
+        UILabel *table2 = [[UILabel alloc] initWithFrame:CGRectMake(545.0f, 480.0f, 150.0f, 50.0f)];
+        table2.text = @"CHEESE";
+        table2.adjustsFontSizeToFitWidth = YES;
         table2.textAlignment = NSTextAlignmentCenter;
-        table2.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];
+        table2.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
         table2.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table2];
         
-        UILabel *table3 = [[UILabel alloc] initWithFrame:CGRectMake(735.0f, 574.0f, 250.0f, 50.0f)];
-        table3.text = @"AISLE 3";
+        UILabel *table3 = [[UILabel alloc] initWithFrame:CGRectMake(845.0f, 480.0f, 150.0f, 50.0f)];
+        table3.text = @"COOKIES";
+        table3.adjustsFontSizeToFitWidth = YES;
         table3.textAlignment = NSTextAlignmentCenter;
-        table3.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];
+        table3.font = [UIFont fontWithName:@"Avenir-Black" size:30.0f];
         table3.textColor = [UIColor colorWithWhite:0.5f alpha:1.0f];
         [self addSubview:table3];
         
