@@ -66,10 +66,22 @@
         sinceLabel.text = @"MEMBER SINCE: 02/08/14";
         sinceLabel.textColor = [UIColor colorWithWhite:0.4f alpha:1.0f];
         [self addSubview:sinceLabel];
+        
+        UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        closeButton.frame = CGRectMake(270.0f, 5.0f, 20.0f, 20.0f);
+        closeButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Black" size:15.0f];
+        [closeButton setTitle:@"x" forState:UIControlStateNormal];
+        [closeButton addTarget:self action:@selector(closePressed) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:closeButton];
          
     }
     
     return self;
+}
+
+- (void)closePressed
+{
+    [self removeFromSuperview];
 }
 
 - (void)emailPressed
