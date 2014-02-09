@@ -69,8 +69,8 @@
     }
     
     BMProgrammer *detailView = [[BMProgrammer alloc] initWithBeacon:self];
-    detailView.frame = CGRectMake(600.0f, 50.0f, 400.0f, 680.0f);
-    [[self superview] addSubview:detailView];
+    detailView.frame = CGRectMake(600.0f, 20.0f, 400.0f, 665.0f);
+    [[[self superview] superview] addSubview:detailView];
     
 }
 

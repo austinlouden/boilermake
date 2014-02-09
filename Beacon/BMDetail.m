@@ -91,8 +91,9 @@
 
 - (void)offerPressed
 {
-    BMSendOffer *sendOffer = [[BMSendOffer alloc] initWithFrame:CGRectMake(600.0f, 50.0f, 400.0f, 680.0f)];
-    [[self superview] addSubview:sendOffer];
+    BMSendOffer *sendOffer = [[BMSendOffer alloc] initWithFrame:CGRectMake(600.0f, 20.0f, 400.0f, 570.0f)];
+    [[[self superview] superview] addSubview:sendOffer];
+    NSLog(@"%@", [[self superview] class]);
 }
 
 /*

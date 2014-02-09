@@ -66,7 +66,7 @@
         
         // offer image
         imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"offer1.jpg"]];
-        imageView.frame = CGRectMake(10.0f, 65.0f, self.frame.size.width-20.0f, 550.0f);
+        imageView.frame = CGRectMake(10.0f, 65.0f, self.frame.size.width-20.0f, 450.0f);
         [self addSubview:imageView];
         
         toggle = 1;

@@ -417,7 +417,13 @@
                         frame = CGRectMake(110.0f+(arc4random() % 30), 145.0f, PERSON_SIZE, PERSON_SIZE);
                         break;
                     case 2:
-                        frame = CGRectMake(480.0f+(arc4random() % 30), 145.0f, PERSON_SIZE, PERSON_SIZE);
+                        frame = CGRectMake(1000.0f+(arc4random() % 30), 145.0f, PERSON_SIZE, PERSON_SIZE);
+                        break;
+                    case 3:
+                        frame = CGRectMake(110.0f+(arc4random() % 30), 650.0f, PERSON_SIZE, PERSON_SIZE);
+                        break;
+                    case 4:
+                        frame = CGRectMake(1000.0f+(arc4random() % 30), 650.0f, PERSON_SIZE, PERSON_SIZE);
                         break;
                     default:
                         break;
@@ -426,36 +432,45 @@
                 NSDictionary *info = @{@"name": @"Austin Louden", @"email": @"austinlouden@gmail.com"};
                 UIImage *image1 = [UIImage imageNamed:@"AUSTIN_small.png"];
                 
-                if(location > 0 && location < 3) {
+            
                     BMPerson *person = [[BMPerson alloc] initWithFrame:frame];
                     person.tag = 15;
                     person.image = image1;
                     person.info = info;
                     [scrollView addSubview:person];
-                }
             }
         }
         else {
+            NSLog(@"current location: %d", currentLocation);
             int location = [[[responseObject objectAtIndex:0] objectForKey:@"location"] integerValue];
-            if (location != currentLocation) {
-                if (location == 1) {
-                    BMPerson *person = (BMPerson*)[self.view viewWithTag:15];
-                    [UIView beginAnimations:nil context:nil];
-                    [UIView setAnimationDuration:1.0];
-                    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-                    person.frame = CGRectMake(110.0f, 145.0f, PERSON_SIZE, PERSON_SIZE);
-                    [UIView commitAnimations];
-                    currentLocation = location;
+            if (location) {
+                
+                CGRect frame;
+                switch (location) {
+                    case 1:
+                        frame = CGRectMake(110.0f+(arc4random() % 30), 145.0f, PERSON_SIZE, PERSON_SIZE);
+                        break;
+                    case 2:
+                        frame = CGRectMake(1000.0f+(arc4random() % 30), 145.0f, PERSON_SIZE, PERSON_SIZE);
+                        break;
+                    case 3:
+                        frame = CGRectMake(110.0f+(arc4random() % 30), 650.0f, PERSON_SIZE, PERSON_SIZE);
+                        break;
+                    case 4:
+                        frame = CGRectMake(1000.0f+(arc4random() % 30), 650.0f, PERSON_SIZE, PERSON_SIZE);
+                        break;
+                    default:
+                        break;
                 }
-                else {
-                    BMPerson *person = (BMPerson*)[self.view viewWithTag:15];
-                    [UIView beginAnimations:nil context:nil];
-                    [UIView setAnimationDuration:1.0];
-                    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-                    person.frame = CGRectMake(480.0f, 145.0f, PERSON_SIZE, PERSON_SIZE);
-                    [UIView commitAnimations];
-                    currentLocation = location;
-                }
+                
+                BMPerson *person = (BMPerson*)[self.view viewWithTag:15];
+                [UIView beginAnimations:nil context:nil];
+                [UIView setAnimationDuration:2.0];
+                [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+                person.frame = frame;
+                [UIView commitAnimations];
+                currentLocation = location;
+
             }
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
